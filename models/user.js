@@ -3,7 +3,7 @@ import mongoose from "mongoose"
 const Schema = mongoose.Schema
 
 const userSchema = new Schema({
-    root_id: String,
+    root_id: mongoose.Schema.Types.ObjectId,
     registeredDateTime: Date,
     username: String,
     password: String,

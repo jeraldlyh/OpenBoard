@@ -3,7 +3,7 @@ import mongoose from "mongoose"
 const Schema = mongoose.Schema
 
 const forumPostSchema = new Schema({
-    root_id: String,
+    root_id: mongoose.Schema.Types.ObjectId,
     user_id: mongoose.Schema.Types.ObjectId,
     postDateTime: Date,
     description: String,
