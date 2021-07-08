@@ -3,12 +3,13 @@ import mongoose from "mongoose"
 const Schema = mongoose.Schema
 
 const forumPostSchema = new Schema({
-    user: mongoose.Schema.Types.ObjectId,
+    root_id: String,
+    user_id: mongoose.Schema.Types.ObjectId,
     postDateTime: Date,
     description: String,
     likes: String,
     comments: [{
-        user: mongoose.Schema.Types.ObjectId,
+        user_id: mongoose.Schema.Types.ObjectId,
         comment: String,
         commentDateTime: Date
     }]
