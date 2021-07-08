@@ -17,12 +17,13 @@ function PageLayout(props: any) {
     const router = useRouter()
 
     return (
-        <div className="min-h-full w-full flex flex-row" >
+        <div className="min-h-screen w-full flex flex-row" >
             <Sider collapsible collapsed={collapsed} onCollapse={() => setCollapsed(!collapsed)}>
                 <Menu theme="dark" className="bg-gray-900" defaultSelectedKeys={['1']} mode="inline">
-                    <Menu.Item className="border-b border-white" key="" icon={<BsClipboardData className="h-6 w-6 -mt-1"/>}>
+                    <Menu.Item className="" key="" icon={<BsClipboardData className="h-6 w-6 -mt-1"/>}>
                         <span className="text-xl text-white font-light">One<span className="font-bold">Board</span></span>
                     </Menu.Item>
+                    <Menu.Divider />
                     <Menu.Item key="1" icon={<FundProjectionScreenOutlined /> }>
                         Site Management
                     </Menu.Item>
@@ -40,7 +41,7 @@ function PageLayout(props: any) {
                     </SubMenu>
                 </Menu>
             </Sider>
-            <div className="w-full">
+            <div className="w-full p-10 bg-black">
                 {props.children}
             </div>
         </div>
