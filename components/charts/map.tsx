@@ -1,5 +1,4 @@
 import React, { memo } from "react";
-
 import {
     ZoomableGroup,
     ComposableMap,
@@ -20,7 +19,7 @@ const rounded = (num: any) => {
     }
 };
 
-const MapChart = ({ setTooltipContent }: { setTooltipContent: any }) => {
+const Map = ({ setTooltipContent }: { setTooltipContent: any }) => {
     return (
         <>
             <ComposableMap data-tip="" projectionConfig={{ scale: 200 }}>
@@ -60,4 +59,4 @@ const MapChart = ({ setTooltipContent }: { setTooltipContent: any }) => {
     );
 };
 
-export default memo(MapChart);
+export default memo(Map);

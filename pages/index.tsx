@@ -1,4 +1,8 @@
-import { BarChart, LineChart, DoughnutChart, PieChart, Map } from "./chart"
+import BarChart from "../components/charts/barChart"
+import DoughnutChart from "../components/charts/doughnutChart"
+import LineChart from "../components/charts/lineChart"
+import MapChart from "../components/charts/mapChart"
+import PieChart from "../components/charts/pieChart"
 
 export default function Home() {
     return (
@@ -7,7 +11,7 @@ export default function Home() {
             <LineChart name="Sample Line" />
             <DoughnutChart name="Sample Doughnut" />
             {/* <PieChart name="Sample Pie" /> */}
-            <Map name="Sample Map" />
+            <MapChart name="Sample Map" />
         </div>
     )
 }
