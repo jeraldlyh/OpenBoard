@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react"
 import { Doughnut } from "react-chartjs-2"
 
 const DoughnutChart = (props: any) => {
-    const [chartData, setChartData]  = useState({});    
+    const [chartData, setChartData]  = useState({})    
 
     const Chart = () => {
         setChartData({
@@ -28,12 +28,12 @@ const DoughnutChart = (props: any) => {
                 ],
                 borderWidth: 1
             }]
-        });
+        })
     }
 
     useEffect(() => {
-        Chart();
-    }, []);
+        Chart()
+    }, [])
 
     return (
         <div className="bg-gray-900 rounded-2xl p-8 mr-8 mb-8">

@@ -2,8 +2,8 @@ import React, { useState, useEffect } from "react"
 import { Bar } from "react-chartjs-2"
 
 const BarChart = (props: any) => {
-    const [chartData, setChartData]  = useState({});    
-    const [sampleData, setSampleData] = useState([]);    
+    const [chartData, setChartData]  = useState({})    
+    const [sampleData, setSampleData] = useState([])    
 
     const Chart = () => {
         setChartData({
@@ -29,12 +29,12 @@ const BarChart = (props: any) => {
                 ],
                 borderWidth: 1
             }]
-        });
+        })
     }
 
     useEffect(() => {
-        Chart();
-    }, []);
+        Chart()
+    }, [])
 
     return (
         <div className="bg-gray-900 rounded-2xl p-8 mr-8 mb-8">

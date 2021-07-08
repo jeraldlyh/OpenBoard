@@ -1,23 +1,23 @@
-import React, { memo } from "react";
+import React, { memo } from "react"
 import {
     ZoomableGroup,
     ComposableMap,
     Geographies,
     Geography
-} from "react-simple-maps";
+} from "react-simple-maps"
 
 const geoUrl =
-    "https://raw.githubusercontent.com/zcreativelabs/react-simple-maps/master/topojson-maps/world-110m.json";
+    "https://raw.githubusercontent.com/zcreativelabs/react-simple-maps/master/topojson-maps/world-110m.json"
 
 const rounded = (num: any) => {
     if (num > 1000000000) {
-        return Math.round(num / 100000000) / 10 + "Bn";
+        return Math.round(num / 100000000) / 10 + "Bn"
     } else if (num > 1000000) {
-        return Math.round(num / 100000) / 10 + "M";
+        return Math.round(num / 100000) / 10 + "M"
     } else {
-        return Math.round(num / 100) / 10 + "K";
+        return Math.round(num / 100) / 10 + "K"
     }
-};
+}
 
 const Map = ({ setTooltipContent }: { setTooltipContent: any }) => {
     return (
@@ -30,11 +30,11 @@ const Map = ({ setTooltipContent }: { setTooltipContent: any }) => {
                                     key={geo.rsmKey}
                                     geography={geo}
                                     onMouseEnter={() => {
-                                        const { NAME, POP_EST } = geo.properties;
-                                        setTooltipContent(`${NAME} — ${rounded(POP_EST)}`);
+                                        const { NAME, POP_EST } = geo.properties
+                                        setTooltipContent(`${NAME} — ${rounded(POP_EST)}`)
                                     }}
                                     onMouseLeave={() => {
-                                        setTooltipContent("");
+                                        setTooltipContent("")
                                     }}
                                     style={{
                                         default: {
@@ -43,7 +43,7 @@ const Map = ({ setTooltipContent }: { setTooltipContent: any }) => {
                                         },
                                         hover: {
                                             fill: "rgba(255, 99, 132, 0.2)",
-                                            stroke: "rgba(255, 99, 132, 0.6)"
+                                            stroke: "rgba(255, 99, 132, 0.7)"
                                         },
                                         pressed: {
                                             fill: "rgba(255, 99, 132, 0.5)",
@@ -56,7 +56,7 @@ const Map = ({ setTooltipContent }: { setTooltipContent: any }) => {
                     </Geographies>
             </ComposableMap>
         </>
-    );
-};
+    )
+}
 
-export default memo(Map);
+export default memo(Map)
