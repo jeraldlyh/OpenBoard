@@ -15,17 +15,9 @@ function PageLayout(props: any) {
     const [collapsed, setCollapsed] = useState(false)
 
     return (
-        <Layout className="min-h-full flex flex-col w-screen">
-            <Sider collapsible 
-                style={{
-                    overflow: 'auto',
-                    height: '100vh',
-                    position: 'fixed',
-                    left: 0,
-                }} 
-                collapsed={collapsed} onCollapse={() => setCollapsed(!collapsed)}
-            >
-                <div className="logo text-xl text-white px-5 py-4 font-light">One<span className="font-bold">Board</span></div>
+        <div className="min-h-full w-full flex flex-row" >
+            <Sider collapsible collapsed={collapsed} onCollapse={() => setCollapsed(!collapsed)}>
+                <div className="logo" />
                 <Menu theme="dark" defaultSelectedKeys={['1']} mode="inline">
                     <Menu.Item key="1" icon={<PieChartOutlined />}>
                         Option 1
@@ -47,11 +39,11 @@ function PageLayout(props: any) {
                     </Menu.Item>
                 </Menu>
             </Sider>
-            <Layout className="">
+            <div className="w-full">
                 {props.children}
-            </Layout>
-        </Layout>
-    )
+            </div>
+        </div>
+    );
 }
 
 
