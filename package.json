@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@types/lodash": "^4.14.171",
+    "antd": "^4.16.6",
     "axios": "^0.21.1",
     "chart.js": "^3.4.1",
     "moment": "^2.29.1",
@@ -18,6 +19,7 @@
     "react": "17.0.2",
     "react-chartjs-2": "^3.0.3",
     "react-dom": "17.0.2",
+    "react-icons": "^4.2.0",
     "react-simple-maps": "^2.3.0",
     "react-tooltip": "^4.2.21"
   },

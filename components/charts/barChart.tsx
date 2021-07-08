@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react"
 import { Bar } from "react-chartjs-2"
 
-const BarChart = (props: any) => {
+function BarChart(props: any) {
     const [chartData, setChartData]  = useState({})    
     const [sampleData, setSampleData] = useState([])    
 
@@ -37,9 +37,9 @@ const BarChart = (props: any) => {
     }, [])
 
     return (
-        <div className="bg-gray-900 rounded-2xl p-8 mr-8 mb-8">
+        <div className="bg-gray-900 rounded-2xl p-8">
             <h1 className="text-white flex justify-center">{props.name}</h1>
-            <div>
+            <div className="h-full">
                 <Bar
                     data={chartData}
                     options={{
