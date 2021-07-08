@@ -41,7 +41,7 @@ function PageLayout(props: any) {
                     </SubMenu>
                 </Menu>
             </Sider>
-            <div className="w-full p-10 bg-black">
+            <div className="w-full px-12 pt-6 pb-9 bg-black">
                 {props.children}
             </div>
         </div>
