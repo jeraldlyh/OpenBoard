@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react"
 import { Line } from "react-chartjs-2"
 
-const LineChart = (props: any) => {
+function LineChart(props: any) {
     const [chartData, setChartData]  = useState({})    
 
     const Chart = () => {

@@ -2,7 +2,7 @@ import React, { useState } from "react"
 import ReactTooltip from "react-tooltip"
 import Map from "./map"
 
-const MapChart = (props: any) => {
+function MapChart(props: any) {
     const [content, setContent] = useState("")
     return (
         <div className="bg-gray-900 rounded-2xl p-8 mr-8 mb-8">

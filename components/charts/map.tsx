@@ -19,7 +19,7 @@ const rounded = (num: any) => {
     }
 }
 
-const Map = ({ setTooltipContent }: { setTooltipContent: any }) => {
+function Map({ setTooltipContent }: { setTooltipContent: any }) {
     return (
         <>
             <ComposableMap data-tip="" projectionConfig={{ scale: 200 }}>

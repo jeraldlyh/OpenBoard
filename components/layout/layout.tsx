@@ -1,29 +1,33 @@
 import React, { useState } from "react"
 import { Layout, Menu } from 'antd'
 import {
-    DesktopOutlined,
-    PieChartOutlined,
-    FileOutlined,
+    ShoppingCartOutlined,
+    FundProjectionScreenOutlined,
     TeamOutlined,
     UserOutlined,
 } from '@ant-design/icons'
+import { BsClipboardData } from 'react-icons/bs'
+import { useRouter } from "next/router"
 
 const { Header, Content, Footer, Sider } = Layout
 const { SubMenu } = Menu
 
 function PageLayout(props: any) {
     const [collapsed, setCollapsed] = useState(false)
+    const router = useRouter()
 
     return (
         <div className="min-h-full w-full flex flex-row" >
             <Sider collapsible collapsed={collapsed} onCollapse={() => setCollapsed(!collapsed)}>
-                <div className="logo" />
-                <Menu theme="dark" defaultSelectedKeys={['1']} mode="inline">
-                    <Menu.Item key="1" icon={<PieChartOutlined />}>
-                        Option 1
+                <Menu theme="dark" className="bg-gray-900" defaultSelectedKeys={['1']} mode="inline">
+                    <Menu.Item className="border-b border-white" key="" icon={<BsClipboardData className="h-6 w-6 -mt-1"/>}>
+                        <span className="text-xl text-white font-light">One<span className="font-bold">Board</span></span>
                     </Menu.Item>
-                    <Menu.Item key="2" icon={<DesktopOutlined />}>
-                        Option 2
+                    <Menu.Item key="1" icon={<FundProjectionScreenOutlined /> }>
+                        Site Management
+                    </Menu.Item>
+                    <Menu.Item key="2" icon={<ShoppingCartOutlined />}>
+                        E-commerce
                     </Menu.Item>
                     <SubMenu key="sub1" icon={<UserOutlined />} title="User">
                         <Menu.Item key="3">Tom</Menu.Item>
@@ -34,9 +38,6 @@ function PageLayout(props: any) {
                         <Menu.Item key="6">Team 1</Menu.Item>
                         <Menu.Item key="8">Team 2</Menu.Item>
                     </SubMenu>
-                    <Menu.Item key="9" icon={<FileOutlined />}>
-                        Files
-                    </Menu.Item>
                 </Menu>
             </Sider>
             <div className="w-full">
@@ -45,7 +46,5 @@ function PageLayout(props: any) {
         </div>
     );
 }
-
-
 
 export default PageLayout

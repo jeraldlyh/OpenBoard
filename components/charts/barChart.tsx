@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react"
 import { Bar } from "react-chartjs-2"
 
-const BarChart = (props: any) => {
+function BarChart(props: any) {
     const [chartData, setChartData]  = useState({})    
     const [sampleData, setSampleData] = useState([])    
 

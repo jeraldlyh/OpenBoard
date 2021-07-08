@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react"
 import { Doughnut } from "react-chartjs-2"
 
-const DoughnutChart = (props: any) => {
+function DoughnutChart(props: any) {
     const [chartData, setChartData]  = useState({})    
 
     const Chart = () => {
