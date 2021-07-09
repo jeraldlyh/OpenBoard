@@ -62,8 +62,8 @@ function PageLayout(props: any) {
                     <Menu.Item key="3" icon={<HiOutlineBookOpen />} onClick={() => router.push("/education")}>
                         Education
                     </Menu.Item>
-                    <Menu.Item key="4" icon={<VscSymbolMisc />} onClick={() => router.push("/misc")}>
-                        Misc
+                    <Menu.Item key="4" icon={<VscSymbolMisc />} onClick={() => router.push("/miscellaneous")}>
+                        Miscellaneous
                     </Menu.Item>
                     {/* <SubMenu key="sub1" icon={<VscSymbolMisc />} title="Team">
                         <Menu.Item key="">Team 1</Menu.Item>

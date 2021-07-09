@@ -2,7 +2,7 @@ import BarChart from "../components/charts/barChart"
 import LineChart from "../components/charts/lineChart"
 import MapChart from "../components/charts/mapChart"
 
-export default function Misc() {
+export default function Miscellaneous() {
     return (
         <div className="h-full w-full">
             <div className="flex text-xl font-bold dark:text-white">Miscellaneous</div>
