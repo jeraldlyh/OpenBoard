@@ -5,7 +5,7 @@ import Product from "../../../models/product"
 import faker from "faker"
 
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
-    const product = new Product({
+    const response = await Product.create({
         root_id: "60e6b39f51e0963eb878271b",
         category: faker.commerce.department(),
         products: [
@@ -23,7 +23,6 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
             },
         ]
     })
-    const response = await product.save()
     return res.status(201).send(response)
 }
 

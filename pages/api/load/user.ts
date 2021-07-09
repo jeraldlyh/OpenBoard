@@ -5,7 +5,7 @@ import User from "../../../models/user"
 import faker from "faker"
 
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
-    const user = new User({
+    const response = await User.create({
         root_id: "60e6b39f51e0963eb878271b",
         registeredDateTime: faker.time.recent(),
         username: faker.internet.userName(),
@@ -23,7 +23,6 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
             facebook: ""
         }
     })
-    const response = await user.save()
     return res.status(201).send(response)
 }
 
