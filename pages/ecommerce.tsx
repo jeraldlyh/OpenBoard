@@ -1,23 +1,20 @@
 import BarChart from "../components/charts/barChart"
-import DoughnutChart from "../components/charts/doughnutChart"
 import LineChart from "../components/charts/lineChart"
 import MapChart from "../components/charts/mapChart"
-import PieChart from "../components/charts/pieChart"
-import Layout from "../components/layout/layout"
 
-export default function Home() {
+export default function Ecommerce() {
     return (
-        <Layout>
-            <div className="bg-black h-full w-full pt-8 pl-8">
-                <div className="flex justify-center mb-5 text-xl text-white">E-commerce</div>
-                <div className="grid grid-cols-3">
-                    <BarChart name="Sample Bar" />
-                    <LineChart name="Sample Line" />
-                    <DoughnutChart name="Sample Doughnut" />
-                    {/* <PieChart name="Sample Pie" /> */}
-                    <MapChart name="Sample Map" />
-                </div>
+        <div className="h-full w-full">
+            <div className="flex justify-center mb-6 text-lg text-white">E-commerce</div>
+            <div className="flex flex-col gap-y-8">
+            <div className="grid grid-cols-2 gap-x-8">
+                <BarChart name="Sample Bar" />
+                <LineChart name="Sample Line" />
             </div>
-        </Layout>
+            <div className="grid grid-cols-1 gap-x-8">
+                <MapChart name="Sample Map" />
+            </div>
+            </div>
+        </div>
     )
 }
