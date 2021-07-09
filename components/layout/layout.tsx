@@ -49,7 +49,7 @@ function PageLayout(props: any) {
         <div className="min-h-screen w-full flex flex-row" >
             <Sider theme={theme as any} collapsible collapsed={collapsed} onCollapse={() => setCollapsed(!collapsed)}>
                 <Menu theme={theme as any} defaultSelectedKeys={defaultSelectedKey} mode="inline">
-                    <Menu.Item icon={<BsClipboardData className="transform scale-150 -mt-1 mr-1"/>} >
+                    <Menu.Item key="" icon={<BsClipboardData className="transform scale-150 -mt-1 mr-1"/>} >
                         <span className="text-xl dark:text-white font-light">One<span className="font-bold">Board</span></span>
                     </Menu.Item>
                     <Menu.Divider />
