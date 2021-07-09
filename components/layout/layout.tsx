@@ -2,7 +2,7 @@ import React, { useState } from "react"
 import { Layout, Menu } from 'antd'
 import { AiOutlineFundProjectionScreen, AiOutlineShoppingCart } from 'react-icons/ai'
 import { BsClipboardData } from 'react-icons/bs'
-import { BiBookBookmark } from 'react-icons/bi'
+import { HiOutlineBookOpen } from 'react-icons/hi'
 import { VscSymbolMisc } from 'react-icons/vsc'
 import { useRouter } from "next/router"
 
@@ -33,7 +33,7 @@ function PageLayout(props: any) {
         <div className="min-h-screen w-full flex flex-row" >
             <Sider collapsible collapsed={collapsed} onCollapse={() => setCollapsed(!collapsed)}>
                 <Menu theme="dark" className="bg-gray-900" defaultSelectedKeys={defaultSelectedKey} mode="inline">
-                    <Menu.Item className="hover:cursor-default" key="" icon={<BsClipboardData className="h-6 w-6 -mt-1"/>} >
+                    <Menu.Item icon={<BsClipboardData className="transform scale-150 -mt-1 mr-1"/>} >
                         <span className="text-xl text-white font-light">One<span className="font-bold">Board</span></span>
                     </Menu.Item>
                     <Menu.Divider />
@@ -43,7 +43,7 @@ function PageLayout(props: any) {
                     <Menu.Item key="2" icon={<AiOutlineShoppingCart />} onClick={() => router.push('/ecommerce')}>
                         E-commerce
                     </Menu.Item>
-                    <Menu.Item key="3" icon={<BiBookBookmark />} onClick={() => router.push('/education')}>
+                    <Menu.Item key="3" icon={<HiOutlineBookOpen />} onClick={() => router.push('/education')}>
                         Education
                     </Menu.Item>
                     <Menu.Item key="4" icon={<VscSymbolMisc />} onClick={() => router.push('/misc')}>
