@@ -11,7 +11,7 @@ export default function Misc() {
                 <BarChart name="Sample Bar" />
                 <LineChart name="Sample Line" />
             </div>
-            <div className="grid grid-cols-1 gap-x-8">
+            <div className="grid grid-cols-1 gap-x-8 mb-9">
                 <MapChart name="Sample Map" />
             </div>
             </div>
