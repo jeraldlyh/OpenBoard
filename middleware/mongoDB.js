@@ -5,12 +5,13 @@ const connectDB = handler => async (req, res) => {
         return handler(req, res)
     }
 
-    await mongoose.connect(process.env.MONGODB_URI, {
+    const db = await mongoose.connect(process.env.MONGODB_URI, {
         useNewUrlParser: true,
         useUnifiedTopology: true,
         useFindAndModify: false,
         useCreateIndex: true,
     })
+    console.log("Connected to a new database instance")
     return handler(req, res)
 }
 // const connection = {}
