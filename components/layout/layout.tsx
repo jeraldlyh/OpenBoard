@@ -1,41 +1,49 @@
-import React, { useState } from "react"
-import { Layout, Menu, Switch } from 'antd'
-import { AiOutlineFundProjectionScreen, AiOutlineShoppingCart } from 'react-icons/ai'
-import { BsClipboardData } from 'react-icons/bs'
-import { HiOutlineBookOpen } from 'react-icons/hi'
-import { VscSymbolMisc } from 'react-icons/vsc'
+import React, { useState, useEffect } from "react"
+import { Layout, Menu, Switch } from "antd"
+import { AiOutlineFundProjectionScreen, AiOutlineShoppingCart } from "react-icons/ai"
+import { BsClipboardData } from "react-icons/bs"
+import { HiOutlineBookOpen } from "react-icons/hi"
+import { VscSymbolMisc } from "react-icons/vsc"
 import { useRouter } from "next/router"
 import DarkModeToggle from "react-dark-mode-toggle"
-import { useTheme } from 'next-themes'
+import { useTheme } from "next-themes"
 
 const { Header, Content, Footer, Sider } = Layout
 const { SubMenu } = Menu
 
 function PageLayout(props: any) {
     const router = useRouter()
-    const [collapsed, setCollapsed] = useState(false)
+    const [ collapsed, setCollapsed ] = useState(false)
     const { theme, setTheme } = useTheme()
+    const [mounted, setMounted] = useState(false)
+
+    useEffect(() => {
+        setMounted(true)
+        setTheme("dark")
+    }, [])
 
     const toggleTheme = () => {
-        setTheme(theme === 'dark' ? 'light' : 'dark')
+        setTheme(theme === "dark" ? "light" : "dark")
     }
 
     let defaultSelectedKey
 
     switch(router.pathname) {
-        case '/':
-            defaultSelectedKey = ['1']
+        case "/":
+            defaultSelectedKey = ["1"]
             break
-        case '/ecommerce':
-            defaultSelectedKey = ['2']
+        case "/ecommerce":
+            defaultSelectedKey = ["2"]
             break
-        case '/education':
-            defaultSelectedKey = ['3']
+        case "/education":
+            defaultSelectedKey = ["3"]
             break
-        case '/misc':
-            defaultSelectedKey = ['4']
+        case "/misc":
+            defaultSelectedKey = ["4"]
             break
     }
+
+    if (!mounted) return null
 
     return (
         <div className="min-h-screen w-full flex flex-row" >
@@ -45,16 +53,16 @@ function PageLayout(props: any) {
                         <span className="text-xl dark:text-white font-light">One<span className="font-bold">Board</span></span>
                     </Menu.Item>
                     <Menu.Divider />
-                    <Menu.Item key="1" icon={<AiOutlineFundProjectionScreen />} onClick={() => router.push('/')}>
+                    <Menu.Item key="1" icon={<AiOutlineFundProjectionScreen />} onClick={() => router.push("/")}>
                         Site Management
                     </Menu.Item>
-                    <Menu.Item key="2" icon={<AiOutlineShoppingCart />} onClick={() => router.push('/ecommerce')}>
+                    <Menu.Item key="2" icon={<AiOutlineShoppingCart />} onClick={() => router.push("/ecommerce")}>
                         E-commerce
                     </Menu.Item>
-                    <Menu.Item key="3" icon={<HiOutlineBookOpen />} onClick={() => router.push('/education')}>
+                    <Menu.Item key="3" icon={<HiOutlineBookOpen />} onClick={() => router.push("/education")}>
                         Education
                     </Menu.Item>
-                    <Menu.Item key="4" icon={<VscSymbolMisc />} onClick={() => router.push('/misc')}>
+                    <Menu.Item key="4" icon={<VscSymbolMisc />} onClick={() => router.push("/misc")}>
                         Misc
                     </Menu.Item>
                     {/* <SubMenu key="sub1" icon={<VscSymbolMisc />} title="Team">
@@ -64,14 +72,14 @@ function PageLayout(props: any) {
                 </Menu>
                 <div className="flex justify-center mt-5">
                     {/* <Switch
-                        checked={theme === 'dark'}
+                        checked={theme === "dark"}
                         onChange={toggleTheme}
                         checkedChildren="Dark"
                         unCheckedChildren="Light"
                     /> */}
                     <DarkModeToggle
                         onChange={toggleTheme}
-                        checked={theme === 'dark'}
+                        checked={theme === "dark"}
                         size={50}
                         speed={4}
                     />
@@ -81,7 +89,7 @@ function PageLayout(props: any) {
                 {props.children}
             </div>
         </div>
-    );
+    )
 }
 
 export default PageLayout
