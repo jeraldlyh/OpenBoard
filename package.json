@@ -9,10 +9,12 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@types/faker": "^5.5.7",
     "@types/lodash": "^4.14.171",
     "antd": "^4.16.6",
     "axios": "^0.21.1",
     "chart.js": "^3.4.1",
+    "faker": "^5.5.3",
     "moment": "^2.29.1",
     "mongoose": "^5.13.2",
     "next": "11.0.1",

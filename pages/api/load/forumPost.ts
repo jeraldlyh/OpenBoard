@@ -2,21 +2,22 @@ import _ from "lodash"
 import type { NextApiRequest, NextApiResponse } from "next"
 import connectDB from "../../../middleware/mongodb"
 import ForumPost from "../../../models/forumPost"
-import forumPostData from "../../../data/forumPost.json"
+import faker from "faker"
 
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
-    const updatedData = _.map(forumPostData, function (data) {
-        var tempData = _.extend(data, {
-            root_id: process.env.ROOT_ID,
-            postDateTime: new Date().getTime(),
-        })
-        return _.merge(tempData, {
-                comments: [{
-                    commentDateTime: new Date().getTime()
-                }]
-            })
+    const forumPost = new ForumPost({
+        root_id: "60e6b39f51e0963eb878271b",
+        user_id: "60e6b9b845132f42571f3ac2",
+        description: faker.lorem.paragraph(),
+        likes: faker.datatype.number(),
+        postDateTime: faker.time.recent(),
+        comments: [{
+            user_id: "60e6b9b845132f42571f3ac3",
+            comment: faker.lorem.sentence(),
+            commentDateTime: faker.time.recent(),
+        }]
     })
-    const response = await ForumPost.insertMany(updatedData)
+    const response = await forumPost.save()
     return res.status(201).send(response)
 }
 

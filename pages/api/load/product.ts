@@ -2,15 +2,28 @@ import _ from "lodash"
 import type { NextApiRequest, NextApiResponse } from "next"
 import connectDB from "../../../middleware/mongodb"
 import Product from "../../../models/product"
-import productData from "../../../data/products.json"
+import faker from "faker"
 
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
-    const updatedData = _.map(productData, function (data) {
-        return _.extend(data, {
-            root_id: process.env.ROOT_ID,
-        })
+    const product = new Product({
+        root_id: "60e6b39f51e0963eb878271b",
+        category: faker.commerce.department(),
+        products: [
+            {
+                name: faker.commerce.productName(),
+                price: faker.datatype.number(),
+                quantity: faker.datatype.number(),
+                imageURL: faker.image.imageUrl()
+            },
+            {
+                name: faker.commerce.productName(),
+                price: faker.datatype.number(),
+                quantity: faker.datatype.number(),
+                imageURL: faker.image.imageUrl()
+            },
+        ]
     })
-    const response = await Product.insertMany(updatedData)
+    const response = await product.save()
     return res.status(201).send(response)
 }
 
