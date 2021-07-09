@@ -36,8 +36,8 @@ function PieChart(props: any) {
     }, [])
 
     return (
-        <div className="bg-gray-900 rounded-2xl p-8">
-            <h1 className="text-white flex justify-center">{props.name}</h1>
+        <div className="dark:bg-gray-900 bg-white rounded-2xl p-8">
+            <h1 className="dark:text-white flex justify-center">{props.name}</h1>
             <div className="h-full">
                 <Pie
                     data={chartData}

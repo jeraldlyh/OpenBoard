@@ -77,7 +77,7 @@ function PageLayout(props: any) {
                     />
                 </div>
             </Sider>
-            <div className="w-full px-12 pt-6 pb-9 dark:bg-black bg-white">
+            <div className="w-full px-12 pt-6 pb-9 dark:bg-black bg-gray-100">
                 {props.children}
             </div>
         </div>
