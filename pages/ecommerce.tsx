@@ -5,7 +5,8 @@ import MapChart from "../components/charts/mapChart"
 export default function Ecommerce() {
     return (
         <div className="h-full w-full">
-            <div className="flex justify-center mb-6 text-xl font-bold dark:text-white">E-commerce</div>
+            <div className="flex text-xl font-bold dark:text-white">E-commerce</div>
+            <div className="flex mb-5 text-sm font-light dark:text-white opacity-50">Product listings, Sales overview, Revenue</div>
             <div className="flex flex-col gap-y-8">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-y-8 gap-x-8">
                 <BarChart name="Sample Bar" />
