@@ -5,6 +5,8 @@ import { BsClipboardData } from 'react-icons/bs'
 import { HiOutlineBookOpen } from 'react-icons/hi'
 import { VscSymbolMisc } from 'react-icons/vsc'
 import { useRouter } from "next/router"
+import DarkModeToggle from "react-dark-mode-toggle"
+import { useTheme } from 'next-themes'
 
 const { Header, Content, Footer, Sider } = Layout
 const { SubMenu } = Menu
@@ -12,7 +14,7 @@ const { SubMenu } = Menu
 function PageLayout(props: any) {
     const router = useRouter()
     const [collapsed, setCollapsed] = useState(false)
-    const [theme, setTheme] = useState('dark')
+    const { theme, setTheme } = useTheme()
 
     const toggleTheme = () => {
         setTheme(theme === 'dark' ? 'light' : 'dark')
@@ -61,15 +63,21 @@ function PageLayout(props: any) {
                     </SubMenu> */}
                 </Menu>
                 <div className="flex justify-center mt-5">
-                    <Switch
+                    {/* <Switch
                         checked={theme === 'dark'}
                         onChange={toggleTheme}
                         checkedChildren="Dark"
                         unCheckedChildren="Light"
+                    /> */}
+                    <DarkModeToggle
+                        onChange={toggleTheme}
+                        checked={theme === 'dark'}
+                        size={50}
+                        speed={4}
                     />
                 </div>
             </Sider>
-            <div className="w-full px-12 pt-6 pb-9 bg-black">
+            <div className="w-full px-12 pt-6 pb-9 dark:bg-black bg-white">
                 {props.children}
             </div>
         </div>
