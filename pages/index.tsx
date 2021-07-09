@@ -4,7 +4,7 @@ import LineChart from "../components/charts/lineChart"
 import MapChart from "../components/charts/mapChart"
 import PieChart from "../components/charts/pieChart"
 
-export default function Home() {
+export default function Site() {
     return (
         <div className="h-full w-full">
             <div className="flex justify-center mb-6 text-lg text-white">Site Management</div>
