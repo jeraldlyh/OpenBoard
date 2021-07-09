@@ -1,10 +1,15 @@
 import "../styles/globals.css"
 import 'antd/dist/antd.css';
+import Layout from "../components/layout/layout"
 
 import type { AppProps } from "next/app"
 
 function MyApp({ Component, pageProps }: AppProps) {
-    return <Component {...pageProps} />
+    return (
+        <Layout>
+            <Component {...pageProps} />
+        </Layout>
+    )
 }
 
 export default MyApp
