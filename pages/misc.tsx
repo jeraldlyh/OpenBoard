@@ -7,7 +7,7 @@ export default function Misc() {
         <div className="h-full w-full">
             <div className="flex justify-center mb-6 text-xl font-bold dark:text-white">Miscellaneous</div>
             <div className="flex flex-col gap-y-8">
-            <div className="grid grid-cols-2 gap-x-8">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-y-8 gap-x-8">
                 <BarChart name="Sample Bar" />
                 <LineChart name="Sample Line" />
             </div>
