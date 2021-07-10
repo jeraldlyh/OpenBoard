@@ -25,7 +25,7 @@ function PageLayout(props: any) {
     const inactive = "flex items-center font-normal pl-7 py-2 text-sm border-l-4 border-white cursor-pointer hover:bg-gray-100 hover:border-l-4 hover:border-blue-500"
     const active = "flex items-center font-semibold pl-7 py-2 text-sm bg-th-background border-l-4 border-blue-500 cursor-pointer"
 
-    const themes = [{ name: 'Light' }, { name: 'Dark' }, { name: 'Emerald' }, { name: 'Pink' }];
+    const themes = [{ name: 'Dark' }, { name: 'Light' }, { name: 'Emerald' }, { name: 'Pink' }];
 
     // const options = [
     //     { value: 'dark', label: 'Dark' },
@@ -44,7 +44,7 @@ function PageLayout(props: any) {
                     <BsClipboardData className="text-purple-400 dark:text-green-600 h-7 w-7"/>
                     <span className="border-r border-gray-600 ml-2 pr-9 mr-8 text-2xl font-light text-transparent bg-clip-text bg-gradient-to-br from-purple-400 to-red-500 dark:from-green-400 dark:to-blue-500">One<span className="font-bold">Board</span></span>
                     <BsSearch className="text-gray-400 h-4 w-4" />
-                    <input value={searchValue} onChange={e => setSearchValue(e.target.value)} placeholder="Search..." className="dark:bg-gray-900 bg-white dark:text-white focus:outline-none text-sm tracking-wide px-3 w-96" />
+                    <input value={searchValue} onChange={e => setSearchValue(e.target.value)} placeholder="Search..." className="bg-th-background dark:text-white focus:outline-none text-sm tracking-wide px-3 w-96" />
                 </div>
                 {/* <DarkModeToggle
                     onChange={toggleTheme}
@@ -71,8 +71,8 @@ function PageLayout(props: any) {
             </div>
             
             {/* Menu bar */}
-            <div className="overflow-y-scroll z-50 bg-th-background flex flex-col h-full w-60 fixed">
-                <div className="pl-8 pt-5 pb-3 text-gray-400">
+            <div className="overflow-y-scroll z-50 bg-th-background-secondary flex flex-col h-full w-60 fixed">
+                <div className="pl-8 pt-5 pb-3 text-gray-400 text-sm">
                     MENU
                 </div>
                 <div className={router.pathname === '/' ? active : inactive} onClick={() => router.push("/")}>
@@ -91,7 +91,7 @@ function PageLayout(props: any) {
                     <VscSymbolMisc className="h-5 w-5 mr-2" />
                     Miscellaneous
                 </div>
-                <div className="pl-8 pt-8 pb-3 text-gray-400">
+                <div className="pl-8 pt-8 pb-3 text-gray-400 text-sm">
                     HELP
                 </div>
                 <div className={inactive}>
