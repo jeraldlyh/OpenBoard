@@ -14,7 +14,7 @@ export default function Site() {
                 <BarChart name="Sample Bar" />
                 <LineChart name="Sample Line" />
             </div>
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-y-8 gap-x-8 mb-9">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-y-8 gap-x-8">
                 <DoughnutChart name="Sample Doughnut" />
                 <PieChart name="Sample Pie" />
                 <MapChart name="Sample Map" />

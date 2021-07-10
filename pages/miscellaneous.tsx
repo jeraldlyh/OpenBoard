@@ -12,7 +12,7 @@ export default function Miscellaneous() {
                 <BarChart name="Sample Bar" />
                 <LineChart name="Sample Line" />
             </div>
-            <div className="grid grid-cols-1 gap-x-8 mb-9">
+            <div className="grid grid-cols-1 gap-x-8">
                 <MapChart name="Sample Map" />
             </div>
             </div>
