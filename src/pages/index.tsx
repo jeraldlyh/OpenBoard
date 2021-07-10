@@ -14,7 +14,7 @@ export default function Site() {
                 <title>OneBoard | Site Management</title>
             </Head>
             <Layout>
-                <div className="h-full w-full">
+                <div className="min-h-screen w-full">
                     <div className="flex text-xl font-bold text-th-text">Site Management</div>
                     <div className="flex mb-5 text-sm font-light text-th-text-secondary opacity-50">User management, Page views, Session statistics</div>
                     <div className="flex flex-col gap-y-8">

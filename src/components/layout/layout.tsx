@@ -29,7 +29,7 @@ function PageLayout(props: any) {
                     <span className="cursor-default ml-2 pr-7 mr-10 text-2xl font-light text-transparent bg-clip-text bg-gradient-to-br from-th-from to-th-to">One<span className="font-bold">Board</span></span>
                     <div className="flex items-center border border-th-accent-secondary rounded-full py-2 px-5">
                         <BsSearch className="text-th-text-secondary h-3 w-3" />
-                        <input value={searchValue} onChange={e => setSearchValue(e.target.value)} placeholder="Search..." className="bg-th-background-secondary text-th-text-secondary focus:outline-none text-sm tracking-wide px-3 w-96" />
+                        <input value={searchValue} onChange={e => setSearchValue(e.target.value)} placeholder="Search..." className="bg-th-background-secondary text-th-text-secondary focus:outline-none text-sm tracking-wide pl-3 w-96" />
                     </div>
                 </div>
 
@@ -75,7 +75,7 @@ function PageLayout(props: any) {
                 <div className="cursor-default pl-8 pt-8 pb-2 text-th-accent text-sm">
                     HELP
                 </div>
-                <div className={inactive}>
+                <div className={router.pathname === "/documentation" ? active : inactive} onClick={() => router.push("/documentation")}>
                     <AiOutlineSmile className="h-5 w-5 mr-2" />
                     Documentation
                 </div>

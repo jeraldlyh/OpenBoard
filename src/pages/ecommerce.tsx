@@ -12,7 +12,7 @@ export default function Ecommerce() {
                 <title>OneBoard | E-commerce</title>
             </Head>
             <Layout>
-                <div className="h-full w-full">
+                <div className="min-h-screen w-full">
                     <div className="flex text-xl font-bold text-th-text">E-commerce</div>
                     <div className="flex mb-5 text-sm font-light text-th-text-secondary opacity-50">Product listings, Sales overview, Revenue</div>
                     <div className="flex flex-col gap-y-8">
