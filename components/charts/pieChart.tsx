@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react"
 import { Pie } from "react-chartjs-2"
 
 function PieChart(props: any) {
-    const [chartData, setChartData]  = useState({})    
+    const [ chartData, setChartData ]  = useState({})    
 
     const Chart = () => {
         setChartData({

@@ -1,4 +1,4 @@
-const colors = require('tailwindcss/colors')
+const colors = require("tailwindcss/colors")
 
 module.exports = {
     purge: [],
@@ -6,8 +6,8 @@ module.exports = {
     darkMode: false, // or "media" or "class"
     theme: {
         colors: {
-            transparent: 'transparent',
-            current: 'currentColor',
+            transparent: "transparent",
+            current: "currentColor",
             black: colors.black,
             white: colors.white,
             gray: colors.gray,
@@ -27,15 +27,15 @@ module.exports = {
             colors: {
                 emerald: colors.emerald,
                 fuchsia: colors.fuchsia,
-                'th-background': 'var(--background)',
-                'th-background-secondary': 'var(--background-secondary)',
-                'th-text': 'var(--text)',
-                'th-text-secondary': 'var(--text-secondary)',
-                'th-accent': 'var(--accent)',
-                'th-accent-secondary': 'var(--accent-secondary)',
-                'th-from': 'var(--from)',
-                'th-to': 'var(--to)',
-                'th-outline': 'var(--outline)',
+                "th-background": "var(--background)",
+                "th-background-secondary": "var(--background-secondary)",
+                "th-text": "var(--text)",
+                "th-text-secondary": "var(--text-secondary)",
+                "th-accent": "var(--accent)",
+                "th-accent-secondary": "var(--accent-secondary)",
+                "th-from": "var(--from)",
+                "th-to": "var(--to)",
+                "th-outline": "var(--outline)",
             },
         },
     },

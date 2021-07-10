@@ -12,7 +12,7 @@ function PageLayout(props: any) {
     const [ searchValue, setSearchValue ] = useState("")
     const inactive = "flex items-center font-normal pl-7 py-2 text-sm border-l-4 border-th-background-secondary text-th-text cursor-pointer hover:bg-th-background hover:text-th-accent hover:border-l-4 hover:border-th-accent"
     const active = "flex items-center font-semibold pl-7 py-2 text-sm bg-th-background border-l-4 border-th-accent text-th-accent cursor-pointer"
-    const themes = [{ name: 'Neon' }, { name: 'Pastel' }, { name: 'Red' }, { name: 'Basic' }, { name: 'Dark' }];
+    const themes = [{ name: "Pastel" }, { name: "Neon" }, { name: "Red" }, { name: "Dark" }, { name: "Basic" }];
 
     useEffect(() => {
         setMounted(true)
@@ -28,7 +28,7 @@ function PageLayout(props: any) {
                     <BsClipboardData className="text-th-from h-7 w-7"/>
                     <span className="cursor-default ml-2 pr-9 mr-10 text-2xl font-light text-transparent bg-clip-text bg-gradient-to-br from-th-from to-th-to">One<span className="font-bold">Board</span></span>
                     <BsSearch className="text-th-text-secondary h-4 w-4" />
-                    <input value={searchValue} onChange={e => setSearchValue(e.target.value)} placeholder="Search..." className="bg-th-background-secondary text-th-text-secondary focus:outline-none text-sm tracking-wide px-3 w-96" />
+                    <input value={searchValue} onChange={e => setSearchValue(e.target.value)} placeholder="Search..." className="bg-th-background-secondary text-th-text-secondary focus:outline-none text-base tracking-wide px-3 w-96" />
                 </div>
 
                 <select
@@ -52,19 +52,19 @@ function PageLayout(props: any) {
                 <div className="cursor-default pl-8 pt-5 pb-2 text-th-accent text-sm">
                     MENU
                 </div>
-                <div className={router.pathname === '/' ? active : inactive} onClick={() => router.push("/")}>
+                <div className={router.pathname === "/" ? active : inactive} onClick={() => router.push("/")}>
                     <AiOutlineFundProjectionScreen className="h-5 w-5 mr-2" />
                     Site Management
                 </div>
-                <div className={router.pathname === '/ecommerce' ? active : inactive} onClick={() => router.push("/ecommerce")}>
+                <div className={router.pathname === "/ecommerce" ? active : inactive} onClick={() => router.push("/ecommerce")}>
                     <AiOutlineShoppingCart className="h-5 w-5 mr-2" />
                     E-commerce
                 </div>
-                <div className={router.pathname === '/education' ? active : inactive} onClick={() => router.push("/education")}>
+                <div className={router.pathname === "/education" ? active : inactive} onClick={() => router.push("/education")}>
                     <AiOutlineRead className="h-5 w-5 mr-2" />
                     Education
                 </div>
-                <div className={router.pathname === '/miscellaneous' ? active : inactive} onClick={() => router.push("/miscellaneous")}>
+                <div className={router.pathname === "/miscellaneous" ? active : inactive} onClick={() => router.push("/miscellaneous")}>
                     <VscSymbolMisc className="h-5 w-5 mr-2" />
                     Miscellaneous
                 </div>
