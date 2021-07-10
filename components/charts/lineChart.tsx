@@ -37,13 +37,12 @@ function LineChart(props: any) {
 
     return (
         <div className="bg-th-background-secondary rounded-2xl p-8">
-            <h1 className="dark:text-white flex justify-center">{props.name}</h1>
+            <h1 className="text-th-text flex justify-center">{props.name}</h1>
             <div className="h-full">
                 <Line
                     data={chartData}
                     options={{
                         responsive:true,
-                        title: { text: "THICCNESS SCALE", display: true },
                         scales:{
                             yAxes:[ {
                                 ticks:{
