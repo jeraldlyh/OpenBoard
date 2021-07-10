@@ -1,6 +1,6 @@
 import _ from "lodash"
-import connectDB from "../../../middleware/mongodb"
-import Root from "../../../models/root"
+import connectDB from "../../../../middleware/mongodb"
+import Root from "../../../../models/root"
 import type { NextApiRequest, NextApiResponse } from "next"
 
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {

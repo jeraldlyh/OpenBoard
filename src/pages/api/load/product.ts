@@ -1,7 +1,7 @@
 import _ from "lodash"
 import type { NextApiRequest, NextApiResponse } from "next"
-import connectDB from "../../../middleware/mongodb"
-import Product from "../../../models/product"
+import connectDB from "../../../../middleware/mongodb"
+import Product from "../../../../models/product"
 import faker from "faker"
 
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {

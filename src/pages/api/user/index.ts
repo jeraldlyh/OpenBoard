@@ -1,5 +1,5 @@
-import connectDB from "../../../middleware/mongodb"
-import User from "../../../models/user"
+import connectDB from "../../../../middleware/mongodb"
+import User from "../../../../models/user"
 import type { NextApiRequest, NextApiResponse } from "next"
 import mongoose from "mongoose"
 

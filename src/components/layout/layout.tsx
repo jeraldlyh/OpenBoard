@@ -12,7 +12,7 @@ function PageLayout(props: any) {
     const [ searchValue, setSearchValue ] = useState("")
     const inactive = "flex items-center font-normal pl-7 py-2 text-sm border-l-4 border-th-background-secondary text-th-text cursor-pointer hover:bg-th-background hover:text-th-accent hover:border-l-4 hover:border-th-accent"
     const active = "flex items-center font-semibold pl-7 py-2 text-sm bg-th-background border-l-4 border-th-accent text-th-accent cursor-pointer"
-    const themes = [{ name: "Pastel" }, { name: "Neon" }, { name: "Red" }, { name: "Dark" }, { name: "Basic" }];
+    const themes = [{ name: "Neon" }, { name: "Pastel" }, { name: "Red" }, { name: "Dark" }, { name: "Basic" }];
 
     useEffect(() => {
         setMounted(true)
