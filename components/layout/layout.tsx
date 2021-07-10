@@ -34,7 +34,7 @@ function PageLayout(props: any) {
                 <select
                     name="theme"
                     id="theme-select"
-                    className="cursor-pointer focus:outline-none bg-th-background border border-th-accent-secondary text-th-text transform scale-95 py-1 px-3 w-20"
+                    className="cursor-pointer focus:outline-none bg-th-background border border-th-accent-secondary text-th-text transform scale-95 py-1 w-20"
                     onChange={e => setTheme(e.currentTarget.value)}
                     value={theme}
                     >
