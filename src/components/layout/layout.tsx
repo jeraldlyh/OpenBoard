@@ -26,25 +26,29 @@ function PageLayout(props: any) {
             <div className="border-b border-th-accent-secondary z-50 py-4 px-8 flex sticky top-0 justify-between items-center bg-th-background-secondary">
                 <div className="flex h-10 items-center">
                     <BsClipboardData className="text-th-from h-7 w-7"/>
-                    <span className="cursor-default ml-2 pr-9 mr-10 text-2xl font-light text-transparent bg-clip-text bg-gradient-to-br from-th-from to-th-to">One<span className="font-bold">Board</span></span>
-                    <BsSearch className="text-th-text-secondary h-4 w-4" />
-                    <input value={searchValue} onChange={e => setSearchValue(e.target.value)} placeholder="Search..." className="bg-th-background-secondary text-th-text-secondary focus:outline-none text-base tracking-wide px-3 w-96" />
+                    <span className="cursor-default ml-2 pr-7 mr-10 text-2xl font-light text-transparent bg-clip-text bg-gradient-to-br from-th-from to-th-to">One<span className="font-bold">Board</span></span>
+                    <div className="flex items-center border border-th-accent-secondary rounded-full py-2 px-5">
+                        <BsSearch className="text-th-text-secondary h-3 w-3" />
+                        <input value={searchValue} onChange={e => setSearchValue(e.target.value)} placeholder="Search..." className="bg-th-background-secondary text-th-text-secondary focus:outline-none text-sm tracking-wide px-3 w-96" />
+                    </div>
                 </div>
 
-                <select
-                    name="theme"
-                    id="theme-select"
-                    className="cursor-pointer focus:outline-none bg-th-background border border-th-accent-secondary text-th-text transform scale-95 py-1 w-20"
-                    onChange={e => setTheme(e.currentTarget.value)}
-                    value={theme}
-                    >
-                    <option value="" disabled>Select Theme</option>
-                    {themes.map(th => (
-                        <option key={th.name.toLowerCase()} value={th.name.toLowerCase()}>
-                        {th.name}
-                        </option>
-                    ))}
-                </select>
+                <div>
+                    <label className="text-th-accent text-sm">Theme:</label>
+                    <select
+                        name="theme"
+                        id="theme-select"
+                        className="text-sm ml-3 cursor-pointer focus:outline-none bg-th-background-secondary border border-th-accent-secondary rounded-full text-th-text-secondary transform scale-95 py-2 px-6 w-24"
+                        onChange={e => setTheme(e.currentTarget.value)}
+                        value={theme}
+                        >
+                        {themes.map(th => (
+                            <option key={th.name.toLowerCase()} value={th.name.toLowerCase()}>
+                                {th.name}
+                            </option>
+                        ))}
+                    </select>
+                </div>
             </div>
             
             {/* Menu bar */}

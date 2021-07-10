@@ -61,3 +61,13 @@
     --to: theme("colors.black");
     --outline: theme("colors.black");
 }
+
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+select::-ms-expand {
+    display: none;
+}
