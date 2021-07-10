@@ -2,8 +2,7 @@ import React, { useState, useEffect } from "react"
 import { Bar } from "react-chartjs-2"
 
 function BarChart(props: any) {
-    const [chartData, setChartData]  = useState({})    
-    const [sampleData, setSampleData] = useState([])    
+    const [ chartData, setChartData ]  = useState({})
 
     const Chart = () => {
         setChartData({
@@ -37,21 +36,19 @@ function BarChart(props: any) {
     }, [])
 
     return (
-        <div className="dark:bg-gray-900 bg-white rounded-2xl p-8">
-            <h1 className="dark:text-white flex justify-center">{props.name}</h1>
+        <div className="border border-th-outline bg-th-background-secondary rounded-2xl px-8 pt-6 pb-7">
+            <h1 className="text-th-text flex justify-center pb-5 font-semibold">{props.name}</h1>
             <div className="h-full">
                 <Bar
                     data={chartData}
                     options={{
                         responsive:true,
-                        title: { text: "THICCNESS SCALE", display: true },
                         scales:{
-                            yAxes:[ {
+                            yAxes:[{
                                 ticks:{
                                     beginAtZero: true
                                 }
-                            }
-                            ]
+                            }]
                         }
                     }}
                     type="bar"

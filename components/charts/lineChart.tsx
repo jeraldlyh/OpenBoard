@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react"
 import { Line } from "react-chartjs-2"
 
 function LineChart(props: any) {
-    const [chartData, setChartData]  = useState({})    
+    const [ chartData, setChartData ]  = useState({})
 
     const Chart = () => {
         setChartData({
@@ -36,14 +36,13 @@ function LineChart(props: any) {
     }, [])
 
     return (
-        <div className="dark:bg-gray-900 bg-white rounded-2xl p-8">
-            <h1 className="dark:text-white flex justify-center">{props.name}</h1>
+        <div className="border border-th-outline bg-th-background-secondary rounded-2xl px-8 pt-6 pb-7">
+            <h1 className="text-th-text flex justify-center pb-5 font-semibold">{props.name}</h1>
             <div className="h-full">
                 <Line
                     data={chartData}
                     options={{
                         responsive:true,
-                        title: { text: "THICCNESS SCALE", display: true },
                         scales:{
                             yAxes:[ {
                                 ticks:{

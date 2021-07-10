@@ -3,12 +3,13 @@ import ReactTooltip from "react-tooltip"
 import Map from "./map"
 
 function MapChart(props: any) {
-    const [content, setContent] = useState("")
+    const [ content, setContent ] = useState("")
+    
     return (
-        <div className="dark:bg-gray-900 bg-white rounded-2xl p-8">
-            <h1 className="dark:text-white flex justify-center">{props.name}</h1>
+        <div className="border border-th-outline bg-th-background-secondary rounded-2xl px-8 pt-6 pb-7">
+            <h1 className="text-th-text flex justify-center pb-5 font-semibold">{props.name}</h1>
             <Map setTooltipContent={setContent} />
-            <ReactTooltip className="bg-black dark:text-white">{content}</ReactTooltip>
+            <ReactTooltip className="bg-black text-th-text">{content}</ReactTooltip>
         </div>
     )
 }
