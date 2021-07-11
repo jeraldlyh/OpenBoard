@@ -36,7 +36,7 @@ function PieChart(props: any) {
     }, [])
 
     return (
-        <div className="border border-th-outline bg-th-background-secondary rounded-2xl px-8 pt-6">
+        <div className="border border-th-outline bg-th-background-secondary rounded-2xl px-8 pt-6 shadow-th-shadow">
             <h1 className="text-th-text flex justify-center pb-5 font-semibold">{props.name}</h1>
             <div className="h-full">
                 <Pie

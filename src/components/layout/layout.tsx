@@ -5,7 +5,7 @@ import { VscSymbolMisc } from "react-icons/vsc"
 import { useRouter } from "next/router"
 import { useTheme } from "next-themes"
 
-function PageLayout(props: any) {
+function Layout(props: any) {
     const router = useRouter()
     const { theme, setTheme } = useTheme()
     const [ mounted, setMounted ] = useState(false)
@@ -37,7 +37,6 @@ function PageLayout(props: any) {
                     <label className="text-th-accent"><AiOutlineFormatPainter className="h-5 w-5"/></label>
                     <select
                         name="theme"
-                        id="theme-select"
                         className="ml-2 text-sm cursor-pointer focus:outline-none bg-th-background-secondary border border-th-accent-secondary rounded-full text-th-text-secondary transform scale-95 py-2 px-5 w-20"
                         onChange={e => setTheme(e.currentTarget.value)}
                         value={theme}
@@ -87,4 +86,4 @@ function PageLayout(props: any) {
     )
 }
 
-export default PageLayout
+export default Layout

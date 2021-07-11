@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react"
-import { Doughnut } from "react-chartjs-2"
+import { Line } from "react-chartjs-2"
 
-function DoughnutChart(props: any) {
-    const [ chartData, setChartData ]  = useState({})    
+function LineCard(props: any) {
+    const [ chartData, setChartData ]  = useState({})
 
     const Chart = () => {
         setChartData({
@@ -36,20 +36,23 @@ function DoughnutChart(props: any) {
     }, [])
 
     return (
-        <div className="border border-th-outline bg-th-background-secondary rounded-2xl px-8 pt-6 shadow-th-shadow">
-            <h1 className="text-th-text flex justify-center pb-5 font-semibold">{props.name}</h1>
-            <div className="h-full">
-                <Doughnut
-                    data={chartData}
-                    options={{
-                        responsive:true,
-                        radius: "50%"
-                    }}
-                    type="doughnut"
-                />
+        <div className="border border-th-outline bg-th-background-secondary rounded-2xl px-8 py-6 shadow-th-shadow">
+            <div className="px-3 text-center relative z-10">
+                <h4 className="text-sm uppercase text-th-text">{props.name}</h4>
+                <h3 className="text-3xl text-th-text font-semibold my-3">{props.stats}</h3>
+                {
+                    props.change[0] === "-" ?
+                    <p className="text-xs text-red-500">▼ {props.change}%</p>
+                    :
+                    <p className="text-xs text-green-500">▲ {props.change}%</p>
+                }
+                
+            </div>
+            <div className="absolute bottom-0 inset-x-0">
+                <canvas id="chart1" height="70"></canvas>
             </div>
         </div>
     )
 }
 
-export default DoughnutChart
+export default LineCard
