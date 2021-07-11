@@ -3,7 +3,7 @@ import DoughnutChart from "../components/charts/doughnutChart"
 import LineChart from "../components/charts/lineChart"
 import MapChart from "../components/charts/mapChart"
 import PieChart from "../components/charts/pieChart"
-import LineCard from "../components/cards/lineCard"
+import StatsCard from "../components/cards/statsCard"
 import Layout from "../components/layout/layout"
 import Head from "next/head"
 import { Fragment } from "react"
@@ -20,9 +20,9 @@ export default function Site() {
                     <div className="flex mb-5 text-sm font-light text-th-text-secondary opacity-50">User management, Page views, Session statistics</div>
                     <div className="flex flex-col gap-y-8">
                         <div className="grid grid-cols-1 lg:grid-cols-3 gap-y-8 gap-x-8">
-                            <LineCard name="Users" stats="45,324" change="45.3" />
-                            <LineCard name="Page Views" stats="635,468" change="-15.2" />
-                            <LineCard name="Bounce Rate" stats="43%" change="21.6" />
+                            <StatsCard name="Users" stats="45,324" change="45.3" />
+                            <StatsCard name="Page Views" stats="635,468" change="-15.2" />
+                            <StatsCard name="Bounce Rate" stats="43%" change="21.6" />
                         </div>
                         <div className="grid grid-cols-1 lg:grid-cols-2 gap-y-8 gap-x-8">
                             <BarChart name="Sample Bar" />
