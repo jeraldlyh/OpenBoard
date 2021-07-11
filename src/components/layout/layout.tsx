@@ -1,5 +1,5 @@
 import React, { useState, useEffect, Fragment } from "react"
-import { AiOutlineFundProjectionScreen, AiOutlineShoppingCart, AiOutlineRead, AiOutlineSmile } from "react-icons/ai"
+import { AiOutlineFundProjectionScreen, AiOutlineShoppingCart, AiOutlineRead, AiOutlineSmile, AiOutlineFormatPainter } from "react-icons/ai"
 import { BsClipboardData, BsSearch } from "react-icons/bs"
 import { VscSymbolMisc } from "react-icons/vsc"
 import { useRouter } from "next/router"
@@ -12,7 +12,7 @@ function PageLayout(props: any) {
     const [ searchValue, setSearchValue ] = useState("")
     const inactive = "flex items-center font-normal pl-7 py-2 text-sm border-l-4 border-th-background-secondary text-th-text cursor-pointer hover:bg-th-background hover:text-th-accent hover:border-l-4 hover:border-th-accent"
     const active = "flex items-center font-semibold pl-7 py-2 text-sm bg-th-background border-l-4 border-th-accent text-th-accent cursor-pointer"
-    const themes = [{ name: "Neon" }, { name: "Pastel" }, { name: "Red" }, { name: "Dark" }, { name: "Basic" }];
+    const themes = [{ name: "Neon" }, { name: "Soft" }, { name: "Ruby" }, { name: "Dark" }, { name: "Basic" }];
 
     useEffect(() => {
         setMounted(true)
@@ -33,12 +33,12 @@ function PageLayout(props: any) {
                     </div>
                 </div>
 
-                <div>
-                    <label className="text-th-accent text-sm">Theme:</label>
+                <div className="flex items-center">
+                    <label className="text-th-accent"><AiOutlineFormatPainter className="h-5 w-5"/></label>
                     <select
                         name="theme"
                         id="theme-select"
-                        className="text-sm ml-3 cursor-pointer focus:outline-none bg-th-background-secondary border border-th-accent-secondary rounded-full text-th-text-secondary transform scale-95 py-2 px-6 w-24"
+                        className="ml-2 text-sm cursor-pointer focus:outline-none bg-th-background-secondary border border-th-accent-secondary rounded-full text-th-text-secondary transform scale-95 py-2 px-5 w-20"
                         onChange={e => setTheme(e.currentTarget.value)}
                         value={theme}
                         >

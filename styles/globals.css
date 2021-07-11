@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-[data-theme="neon"] {
+:root {
     --background: theme("colors.navy1");
     --background-secondary: theme("colors.navy2");
     --text: theme("colors.gray.300");
@@ -14,7 +14,7 @@
     --outline: theme("colors.transparent");
 }
 
-[data-theme="pastel"] {
+[data-theme="soft"] {
     --background: theme("colors.gray.100");
     --background-secondary: theme("colors.white");
     --text: theme("colors.gray.800");
@@ -26,7 +26,7 @@
     --outline: theme("colors.transparent");
 }
 
-[data-theme="red"] {
+[data-theme="ruby"] {
     --background: theme("colors.black");
     --background-secondary: theme("colors.black");
     --text: theme("colors.gray.100");

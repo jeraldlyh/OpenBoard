@@ -4,7 +4,7 @@ import type { AppProps } from "next/app"
 
 function MyApp({ Component, pageProps }: AppProps) {
     return (
-        <ThemeProvider defaultTheme="neon">
+        <ThemeProvider defaultTheme="neon" themes={["neon", "soft", "ruby", "dark", "basic"]} >
             <Component {...pageProps} />
         </ThemeProvider>
     )
