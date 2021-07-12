@@ -23,7 +23,7 @@ function Layout(props: any) {
     return (
         <Fragment>
             {/* Menu header */}
-            <div className="border-b border-th-accent-secondary py-4 px-8 top-0 sticky flex justify-between items-center bg-th-background-secondary">
+            <div className="z-50 border-b border-th-accent-secondary py-4 px-8 top-0 sticky flex justify-between items-center bg-th-background-secondary">
                 <div className="flex items-center">
                     <BsClipboardData className="text-th-from h-7 w-7"/>
                     <span className="cursor-default ml-2 pr-7 mr-10 text-2xl font-light text-transparent bg-clip-text bg-gradient-to-br from-th-from to-th-to">One<span className="font-bold">Board</span></span>
