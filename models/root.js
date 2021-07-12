@@ -3,14 +3,10 @@ import mongoose from "mongoose"
 const Schema = mongoose.Schema
 
 const rootSchema = new Schema({
-    username: {
-        type: String,
-        required: [true, "Username required"]
-    },
-    password: {
-        type: String,
-        required: [true, "Password required"]
-    },
+    username: String,
+    password: String,
+    name: String,
+    email: String,
     preferences: [{
         name: String
     }]
