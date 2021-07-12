@@ -21,7 +21,7 @@ function Layout(props: any) {
     if (!mounted) return null
 
     return (
-        <Fragment>
+        <div className="h-screen overflow-y-scroll scrollbar-hide">
             {/* Menu header */}
             <div className="border-b border-th-accent-secondary z-50 py-4 px-8 flex sticky top-0 justify-between items-center bg-th-background-secondary">
                 <div className="flex h-10 items-center">
@@ -51,7 +51,7 @@ function Layout(props: any) {
             </div>
             
             {/* Menu bar */}
-            <div className="text-th-text-secondary border-r border-th-accent-secondary overflow-y-scroll z-50 bg-th-background-secondary flex flex-col h-full w-56 fixed">
+            <div className="text-th-text-secondary border-r border-th-accent-secondary overflow-y-scroll scrollbar-hide z-50 bg-th-background-secondary flex flex-col h-full w-56 fixed">
                 <div className="cursor-default pl-8 pt-5 pb-2 text-th-accent text-sm">
                     MENU
                 </div>
@@ -79,10 +79,10 @@ function Layout(props: any) {
                     Documentation
                 </div>
             </div>
-            <div className="ml-56 px-10 pb-10 pt-8 bg-th-background min-h-full">
+            <div className="ml-56 px-10 pb-10 pt-8 bg-th-background h-full overflow-y-scroll scrollbar-hide">
                 {props.children}
             </div>
-        </Fragment>
+        </div>
     )
 }
 

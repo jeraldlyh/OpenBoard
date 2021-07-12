@@ -19,11 +19,11 @@ function Home() {
                     <div className="flex text-xl font-bold text-th-text">Site Management</div>
                     <div className="flex mb-5 text-sm font-light text-th-text-secondary opacity-50">User management, Page views, Session statistics</div>
                     <div className="flex flex-col gap-y-8">
-                        <div className="grid grid-cols-1 xl:grid-cols-3 gap-y-8 gap-x-8">
+                        {/* <div className="grid grid-cols-1 xl:grid-cols-3 gap-y-8 gap-x-8">
                             <StatsCard name="Users" stats="45,324" change="45.3" />
                             <StatsCard name="Page Views" stats="635,468" change="-15.2" />
                             <StatsCard name="Bounce Rate" stats="43%" change="21.6" />
-                        </div>
+                        </div> */}
                         <div className="grid grid-cols-1 xl:grid-cols-2 gap-y-8 gap-x-8">
                             <BarChart name="Sample Bar" />
                             <LineChart name="Sample Line" />
