@@ -33,20 +33,25 @@ function Layout(props: any) {
                     </div>
                 </div>
 
-                <div className="flex items-center">
-                    <label className="text-th-accent"><AiOutlineFormatPainter className="h-5 w-5"/></label>
-                    <select
-                        name="theme"
-                        className="ml-2 text-sm cursor-pointer focus:outline-none bg-th-background-secondary border border-th-accent-secondary rounded-full text-th-text-secondary transform scale-95 py-2 px-5 w-20"
-                        onChange={e => setTheme(e.currentTarget.value)}
-                        value={theme}
-                        >
-                        {themes.map(th => (
-                            <option key={th.name.toLowerCase()} value={th.name.toLowerCase()}>
-                                {th.name}
-                            </option>
-                        ))}
-                    </select>
+                <div className="flex items-center gap-x-9">
+                    <div className="flex items-center">
+                        <label className="py-2 pl-4 pr-1 h-9 border border-th-accent-secondary rounded-l-full border-r-0 text-th-accent"><AiOutlineFormatPainter className="h-5 w-5"/></label>
+                        <select
+                            name="theme"
+                            className="border-l-0 -ml-1 h-9 text-sm cursor-pointer focus:outline-none hover:border-th-accent hover:bg-th-accent hover:text-th-background bg-th-background-secondary border border-th-accent-secondary rounded-r-full text-th-text-secondary pl-2 pr-5"
+                            onChange={e => setTheme(e.currentTarget.value)}
+                            value={theme}
+                            >
+                            {themes.map(th => (
+                                <option key={th.name.toLowerCase()} value={th.name.toLowerCase()}>
+                                    {th.name}
+                                </option>
+                            ))}
+                        </select>
+                    </div>
+                    <div className="cursor-pointer flex items-center border border-th-accent-secondary hover:border-th-accent hover:bg-th-accent hover:text-th-background text-th-text-secondary text-sm rounded-full h-9 px-5">
+                        Logout
+                    </div>
                 </div>
             </div>
             
