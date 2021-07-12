@@ -23,7 +23,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
             }
             const root = await Root.findOne(query)
             if (root) {
-                return res.status(200).end()
+                return res.status(200).send(root)
             }
             return res.status(401).end()
         } catch (error) {

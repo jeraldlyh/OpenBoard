@@ -1,6 +1,6 @@
 import axios from "axios"
 
-let baseURL = process.env.NEXT_URL || ""
+let baseURL = process.env.NEXT_URL
 
 const axiosInstance = axios.create({
     baseURL: baseURL,
@@ -17,7 +17,7 @@ axios.interceptors.response.use(response => {
     if (error.response.status === 401) {
         console.log("Unauthorized")
     }
-    return error;
+    return error
 })
 
 export default axiosInstance

@@ -6,7 +6,7 @@ import { useAuthContext } from "../provider/authProvider"
 
 function Login() {
     const router = useRouter()
-    const { setUsername } = useAuthContext()
+    const { setUsername, setID } = useAuthContext()
     const [allValues, setAllValues] = useState({
         username: "",
         password: "",
@@ -19,7 +19,8 @@ function Login() {
     const login = () => {
         loginUser(allValues).then(response => {
             if (response.status === 200) {
-                setUsername(allValues.username)
+                setUsername(response.data.username)
+                setID(response.data._id)
                 router.push("/home")
             }
         })
