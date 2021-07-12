@@ -1,41 +1,34 @@
-import BarChart from "../components/charts/barChart"
-import DoughnutChart from "../components/charts/doughnutChart"
-import LineChart from "../components/charts/lineChart"
-import MapChart from "../components/charts/mapChart"
-import PieChart from "../components/charts/pieChart"
-import StatsCard from "../components/cards/statsCard"
-import Layout from "../components/layout/layout"
 import Head from "next/head"
-import { Fragment } from "react"
+import { Fragment, useState } from "react"
+import { useRouter } from "next/router"
 
-export default function Site() {
+export default function Login() {
+    const router = useRouter()
+    const [ allValues, setAllValues ] = useState({
+        username: "",
+        password: "",
+    })
+
+    const changeHandler = (e: any) => {
+        setAllValues({...allValues, [e.target.name]: e.target.value})
+    }
+
     return (
         <Fragment>
             <Head>
-                <title>OneBoard | Site Management</title>
+                <title>OneBoard | Login</title>
             </Head>
-            <Layout>
-                <div className="min-h-screen w-full">
-                    <div className="flex text-xl font-bold text-th-text">Site Management</div>
-                    <div className="flex mb-5 text-sm font-light text-th-text-secondary opacity-50">User management, Page views, Session statistics</div>
-                    <div className="flex flex-col gap-y-8">
-                        <div className="grid grid-cols-1 xl:grid-cols-3 gap-y-8 gap-x-8">
-                            <StatsCard name="Users" stats="45,324" change="45.3" />
-                            <StatsCard name="Page Views" stats="635,468" change="-15.2" />
-                            <StatsCard name="Bounce Rate" stats="43%" change="21.6" />
-                        </div>
-                        <div className="grid grid-cols-1 xl:grid-cols-2 gap-y-8 gap-x-8">
-                            <BarChart name="Sample Bar" />
-                            <LineChart name="Sample Line" />
-                        </div>
-                        <div className="grid grid-cols-1 xl:grid-cols-3 gap-y-8 gap-x-8">
-                            <DoughnutChart name="Sample Doughnut" />
-                            <PieChart name="Sample Pie" />
-                            <MapChart name="Sample Map" />
-                        </div>
-                    </div>
+            <div className="h-screen w-screen flex flex-col justify-center items-center">
+                <div className="mb-4 flex text-xl font-bold text-th-text">Login</div>
+                <div>Username</div>
+                <input className="px-3 mb-4" type="text" name="username" onChange={changeHandler}></input>
+                <div>Password</div>
+                <input className="px-3" type="password" name="password" onChange={changeHandler}></input>
+                <div className="my-7 bg-white cursor-pointer px-9 py-2 rounded-full text-black">
+                    Login
                 </div>
-            </Layout>
+                <div className="cursor-pointer text-white" onClick={() => router.push("/signUp")}>No account yet? Sign up here</div>
+            </div>
         </Fragment>
     )
 }
