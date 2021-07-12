@@ -21,10 +21,10 @@ function Layout(props: any) {
     if (!mounted) return null
 
     return (
-        <div className="h-screen overflow-y-scroll scrollbar-hide">
+        <div className="flex flex-col">
             {/* Menu header */}
-            <div className="border-b border-th-accent-secondary z-50 py-4 px-8 flex sticky top-0 justify-between items-center bg-th-background-secondary">
-                <div className="flex h-10 items-center">
+            <div className="border-b border-th-accent-secondary py-4 px-8 top-0 sticky flex justify-between items-center bg-th-background-secondary">
+                <div className="flex items-center">
                     <BsClipboardData className="text-th-from h-7 w-7"/>
                     <span className="cursor-default ml-2 pr-7 mr-10 text-2xl font-light text-transparent bg-clip-text bg-gradient-to-br from-th-from to-th-to">One<span className="font-bold">Board</span></span>
                     <div className="flex items-center border border-th-accent-secondary rounded-full py-2 px-5">
@@ -50,37 +50,39 @@ function Layout(props: any) {
                 </div>
             </div>
             
-            {/* Menu bar */}
-            <div className="text-th-text-secondary border-r border-th-accent-secondary overflow-y-scroll scrollbar-hide z-50 bg-th-background-secondary flex flex-col h-full w-56 fixed">
-                <div className="cursor-default pl-8 pt-5 pb-2 text-th-accent text-sm">
-                    MENU
+            <div>
+                {/* Menu bar */}
+                <div className="text-th-text-secondary border-r border-th-accent-secondary overflow-y-scroll scrollbar-hide bg-th-background-secondary flex flex-col h-full w-56 fixed">
+                    <div className="cursor-default pl-8 pt-5 pb-2 text-th-accent text-sm">
+                        MENU
+                    </div>
+                    <div className={router.pathname === "/home" ? active : inactive} onClick={() => router.push("/home")}>
+                        <AiOutlineFundProjectionScreen className="h-5 w-5 mr-2" />
+                        Site Management
+                    </div>
+                    <div className={router.pathname === "/ecommerce" ? active : inactive} onClick={() => router.push("/ecommerce")}>
+                        <AiOutlineShoppingCart className="h-5 w-5 mr-2" />
+                        E-commerce
+                    </div>
+                    <div className={router.pathname === "/education" ? active : inactive} onClick={() => router.push("/education")}>
+                        <AiOutlineRead className="h-5 w-5 mr-2" />
+                        Education
+                    </div>
+                    <div className={router.pathname === "/miscellaneous" ? active : inactive} onClick={() => router.push("/miscellaneous")}>
+                        <VscSymbolMisc className="h-5 w-5 mr-2" />
+                        Miscellaneous
+                    </div>
+                    <div className="cursor-default pl-8 pt-8 pb-2 text-th-accent text-sm">
+                        HELP
+                    </div>
+                    <div className={router.pathname === "/documentation" ? active : inactive} onClick={() => router.push("/documentation")}>
+                        <AiOutlineSmile className="h-5 w-5 mr-2" />
+                        Documentation
+                    </div>
                 </div>
-                <div className={router.pathname === "/home" ? active : inactive} onClick={() => router.push("/home")}>
-                    <AiOutlineFundProjectionScreen className="h-5 w-5 mr-2" />
-                    Site Management
+                <div className="ml-56 px-10 pb-10 pt-8 bg-th-background h-full overflow-y-scroll scrollbar-hide">
+                    {props.children}
                 </div>
-                <div className={router.pathname === "/ecommerce" ? active : inactive} onClick={() => router.push("/ecommerce")}>
-                    <AiOutlineShoppingCart className="h-5 w-5 mr-2" />
-                    E-commerce
-                </div>
-                <div className={router.pathname === "/education" ? active : inactive} onClick={() => router.push("/education")}>
-                    <AiOutlineRead className="h-5 w-5 mr-2" />
-                    Education
-                </div>
-                <div className={router.pathname === "/miscellaneous" ? active : inactive} onClick={() => router.push("/miscellaneous")}>
-                    <VscSymbolMisc className="h-5 w-5 mr-2" />
-                    Miscellaneous
-                </div>
-                <div className="cursor-default pl-8 pt-8 pb-2 text-th-accent text-sm">
-                    HELP
-                </div>
-                <div className={router.pathname === "/documentation" ? active : inactive} onClick={() => router.push("/documentation")}>
-                    <AiOutlineSmile className="h-5 w-5 mr-2" />
-                    Documentation
-                </div>
-            </div>
-            <div className="ml-56 px-10 pb-10 pt-8 bg-th-background h-full overflow-y-scroll scrollbar-hide">
-                {props.children}
             </div>
         </div>
     )
