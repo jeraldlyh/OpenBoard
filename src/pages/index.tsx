@@ -17,13 +17,13 @@ function Login() {
     }
 
     const login = () => {
-        loginUser(allValues).then(response => {
-            if (response.status === 200) {
+        loginUser(allValues)
+            .then(response => {
                 setUsername(response.data.username)
                 setID(response.data._id)
                 router.push("/home")
-            }
-        })
+            })
+            .catch(error => console.log(error))     // Add error modals
     }
 
     return (
