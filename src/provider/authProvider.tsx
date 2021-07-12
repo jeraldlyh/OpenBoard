@@ -1,15 +1,20 @@
-import { createContext, useState } from "react"
+import { createContext, useState, useContext, useEffect } from "react"
 
 type AuthContextType = {
     username: string
     setUsername: (value: string) => void
 }
 
-export const AuthContext = createContext<AuthContextType | undefined>(undefined)
+export const AuthContext = createContext<AuthContextType>({
+    username: "Guest",
+    setUsername: () => {},
+})
+
+export const useAuthContext = () => useContext(AuthContext)
 
 function AuthProvider(props: any) {
     const [username, setUsername] = useState("Guest")
-    
+
     return (
         <AuthContext.Provider value={{
             username, setUsername

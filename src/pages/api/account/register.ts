@@ -1,4 +1,3 @@
-import _ from "lodash"
 import connectDB from "../../../../middleware/mongodb"
 import Root from "../../../../models/root"
 import type { NextApiRequest, NextApiResponse } from "next"

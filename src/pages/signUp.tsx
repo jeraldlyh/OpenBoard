@@ -2,9 +2,9 @@ import Head from "next/head"
 import { Fragment, useState } from "react"
 import { useRouter } from "next/router"
 
-export default function SignUp() {
+function SignUp() {
     const router = useRouter()
-    const [ allValues, setAllValues ] = useState({
+    const [allValues, setAllValues] = useState({
         name: "",
         username: "",
         email: "",
@@ -13,7 +13,7 @@ export default function SignUp() {
     })
 
     const changeHandler = (e: any) => {
-        setAllValues({...allValues, [e.target.name]: e.target.value})
+        setAllValues({ ...allValues, [e.target.name]: e.target.value })
     }
 
     return (
@@ -41,3 +41,5 @@ export default function SignUp() {
         </Fragment>
     )
 }
+
+export default SignUp

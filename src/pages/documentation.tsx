@@ -2,7 +2,7 @@ import Layout from "../components/layout/layout"
 import Head from "next/head"
 import { Fragment } from "react"
 
-export default function Documentation() {
+function Documentation() {
     return (
         <Fragment>
             <Head>
@@ -16,3 +16,5 @@ export default function Documentation() {
         </Fragment>
     )
 }
+
+export default Documentation

@@ -8,7 +8,7 @@ import Layout from "../components/layout/layout"
 import Head from "next/head"
 import { Fragment } from "react"
 
-export default function SiteManagement() {
+function Home() {
     return (
         <Fragment>
             <Head>
@@ -39,3 +39,5 @@ export default function SiteManagement() {
         </Fragment>
     )
 }
+
+export default Home

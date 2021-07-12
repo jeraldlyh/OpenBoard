@@ -5,7 +5,7 @@ import Layout from "../components/layout/layout"
 import Head from "next/head"
 import { Fragment } from "react"
 
-export default function Ecommerce() {
+function Ecommerce() {
     return (
         <Fragment>
             <Head>
@@ -29,3 +29,5 @@ export default function Ecommerce() {
         </Fragment>
     )
 }
+
+export default Ecommerce
