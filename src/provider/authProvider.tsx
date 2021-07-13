@@ -8,7 +8,7 @@ type AuthContextType = {
 }
 
 export const AuthContext = createContext<AuthContextType>({
-    username: "Guest",
+    username: "",
     setUsername: () => {},
     id: "",
     setID: () => {},
@@ -17,7 +17,7 @@ export const AuthContext = createContext<AuthContextType>({
 export const useAuthContext = () => useContext(AuthContext)
 
 function AuthProvider(props: any) {
-    const [username, setUsername] = useState("Guest")
+    const [username, setUsername] = useState("")
     const [id, setID] = useState((""))
 
     return (
