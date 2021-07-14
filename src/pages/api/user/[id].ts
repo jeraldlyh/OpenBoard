@@ -11,9 +11,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
         case "GET":
             try {
                 const users = await User.find({
-                    "root_id": {
-                        $in: [mongoose.Types.ObjectId(body.id.toString())]
-                    }
+                    "root_id": id
                 })
 
                 if (!users) {

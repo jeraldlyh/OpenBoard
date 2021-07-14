@@ -10,9 +10,13 @@ import { Fragment } from "react"
 import { GetServerSideProps } from "next"
 import nookies from "nookies"
 import { verifyIdToken } from "../../firebase/firebaseAdmin"
-import useSWR from "swr"
+import useUser from "../hooks/useUser"
+import { useAuthContext } from "../context/authContext"
 
 function Home() {
+    const { currentUser } = useAuthContext()
+    const { users, isLoading, isError } = useUser(currentUser ? currentUser.uid : null)
+
     return (
         <Fragment>
             <Head>
