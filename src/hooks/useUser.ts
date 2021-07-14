@@ -46,7 +46,11 @@ export default function useUser(id: string) {
     const { data, error } = useSWR(`/api/user/${id}`, fetcher)
     const filterOneWeek = filterByOneWeek(data)
     const filterTwoWeek = filterByTwoWeek(data)
-    const increasePercent = ((filterOneWeek.length - filterTwoWeek.length) / filterTwoWeek.length).toFixed(2)
+
+    const usersOne = filterOneWeek.length
+    const usersTwo = filterTwoWeek.length - usersOne
+
+    const increasePercent = (((usersOne - usersTwo) / usersTwo) * 100).toFixed(1)
 
     return {
         users: _.merge(data, {
