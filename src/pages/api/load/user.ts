@@ -3,14 +3,17 @@ import type { NextApiRequest, NextApiResponse } from "next"
 import connectDB from "../../../../middleware/mongodb"
 import User from "../../../../models/user"
 import faker from "faker"
+import moment from "moment"
 
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
     const { body: { id }, method } = req
 
     if (method === "POST") {
+        const randomDay = Math.floor(Math.random() * 10) + 1
+
         const response = await User.create({
             root_id: id,
-            registeredDateTime: faker.time.recent(),
+            registeredDateTime: moment(faker.time.recent()).subtract(randomDay, "days"),
             username: faker.internet.userName(),
             password: faker.internet.password(),
             bio: faker.lorem.sentence(),

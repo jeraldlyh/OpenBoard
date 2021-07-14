@@ -16,7 +16,7 @@ import { useAuthContext } from "../context/authContext"
 function Home() {
     const { currentUser } = useAuthContext()
     const { users, isLoading, isError } = useUser(currentUser ? currentUser.uid : null)
-
+console.log(users)
     return (
         <Fragment>
             <Head>
