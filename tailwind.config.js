@@ -18,6 +18,7 @@ module.exports = {
                 "th-text-right": "var(--text-right)",
                 "th-background-left-from": "var(--background-left-from)",
                 "th-background-left-to": "var(--background-left-to)",
+                "th-button": "var(--button)",
                 navy1: "#090914",
                 navy2: "#091220",
                 bordertrans: "rgba(255, 255, 255, 0.25)",

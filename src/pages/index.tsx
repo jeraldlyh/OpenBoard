@@ -82,15 +82,15 @@ function Login() {
                     <div className="w-5/12 items-center justify-center text-th-text-right">
                         <div className="mt-14 mb-2 text-sm">USERNAME</div>
                         <div className="flex items-center border border-th-text-right rounded-full py-2 px-5">
-                            <input className="py-1 bg-th-background-secondary focus:outline-none text-sm tracking-wide" type="text" name="username" onChange={changeHandler}></input>
+                            <input className="w-full py-1 bg-th-background-secondary focus:outline-none text-sm tracking-wide" type="text" name="username" onChange={changeHandler}></input>
                         </div>
                         <div className="mt-6 mb-2 text-sm">PASSWORD</div>
                         <div className="flex items-center border border-th-text-right rounded-full py-2 px-5">
-                            <input className="py-1 bg-th-background-secondary focus:outline-none text-sm tracking-wide" type="password" name="password" onChange={changeHandler}></input>
+                            <input className="w-full py-1 bg-th-background-secondary focus:outline-none text-sm tracking-wide" type="password" name="password" onChange={changeHandler}></input>
                         </div>
                         <div className="flex justify-center">
                             <div
-                                className="w-48 text-center mt-16 cursor-pointer py-3 font-bold rounded-full text-lg text-th-background-secondary border-none bg-gradient-to-br from-th-background-left-from to-th-background-left-to hover:opacity-80"
+                                className="w-48 text-center mt-16 cursor-pointer py-3 font-bold rounded-full text-lg text-th-button border-none bg-gradient-to-br from-th-background-left-from to-th-background-left-to hover:opacity-80"
                                 onClick={() => login()}
                             >
                                 LOGIN
