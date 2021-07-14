@@ -9,7 +9,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
     const { body: { id }, method } = req
 
     if (method === "POST") {
-        const randomDay = Math.floor(Math.random() * 10) + 1
+        const randomDay = Math.floor(Math.random() * 21) + 1
 
         const response = await User.create({
             root_id: id,
