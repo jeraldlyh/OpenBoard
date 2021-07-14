@@ -28,8 +28,8 @@ function Layout(props: any) {
                     <BsClipboardData className="text-th-from h-7 w-7"/>
                     <span className="cursor-default ml-2 pr-7 mr-10 text-2xl font-light text-transparent bg-clip-text bg-gradient-to-br from-th-from to-th-to">One<span className="font-bold">Board</span></span>
                     <div className="flex items-center border border-th-accent-secondary rounded-full py-2 px-5">
-                        <BsSearch className="text-th-text-secondary h-3 w-3" />
-                        <input value={searchValue} onChange={e => setSearchValue(e.target.value)} placeholder="Search..." className="bg-th-background-secondary text-th-text-secondary focus:outline-none text-sm tracking-wide pl-3 w-96" />
+                        <BsSearch className="text-th-text h-3 w-3" />
+                        <input value={searchValue} onChange={e => setSearchValue(e.target.value)} placeholder="Search..." className="bg-th-background-secondary text-th-text focus:outline-none text-sm tracking-wide pl-3 w-96" />
                     </div>
                 </div>
 
@@ -38,7 +38,7 @@ function Layout(props: any) {
                         <label className="py-2 pl-4 pr-1 h-9 border border-th-accent-secondary rounded-l-full border-r-0 text-th-accent"><AiOutlineFormatPainter className="h-5 w-5"/></label>
                         <select
                             name="theme"
-                            className="border-l-0 -ml-1 h-9 text-sm cursor-pointer focus:outline-none hover:border-th-accent hover:bg-th-accent hover:text-th-background bg-th-background-secondary border border-th-accent-secondary rounded-r-full text-th-text-secondary pl-2 pr-5"
+                            className="border-l-0 -ml-1 h-9 text-sm cursor-pointer focus:outline-none hover:border-th-accent hover:bg-th-accent hover:text-th-background bg-th-background-secondary border border-th-accent-secondary rounded-r-full text-th-text pl-2 pr-5"
                             onChange={e => setTheme(e.currentTarget.value)}
                             value={theme}
                             >
@@ -49,7 +49,7 @@ function Layout(props: any) {
                             ))}
                         </select>
                     </div>
-                    <div className="cursor-pointer flex items-center border border-th-accent-secondary hover:border-th-accent hover:bg-th-accent hover:text-th-background text-th-text-secondary text-sm rounded-full h-9 px-5">
+                    <div className="cursor-pointer flex items-center border border-th-accent-secondary hover:border-th-accent hover:bg-th-accent hover:text-th-background text-th-text text-sm rounded-full h-9 px-5">
                         Logout
                     </div>
                 </div>
@@ -57,7 +57,7 @@ function Layout(props: any) {
             
             <div>
                 {/* Menu bar */}
-                <div className="text-th-text-secondary border-r border-th-accent-secondary overflow-y-scroll scrollbar-hide bg-th-background-secondary h-full w-56 fixed">
+                <div className="text-th-text border-r border-th-accent-secondary overflow-y-scroll scrollbar-hide bg-th-background-secondary h-full w-56 fixed">
                     <div className="cursor-default pl-8 pt-5 pb-2 text-th-accent text-sm">
                         MENU
                     </div>
