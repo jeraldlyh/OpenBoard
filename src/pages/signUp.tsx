@@ -121,7 +121,7 @@ function SignUp() {
                     <div className="mt-10 lg:mt-28 font-semibold text-lg">
                         Already have an account?
                     </div>
-                    <div onClick={() => router.push("/")} className="font-semibold mt-4 flex items-center border-2 border-th-text-left rounded-full py-3 px-16 text-th-text-left focus:outline-none text-base tracking-wide hover:border-th-text-left hover:bg-th-text-left hover:text-th-background-left-to cursor-pointer">
+                    <div onClick={() => router.push("/login")} className="font-semibold mt-4 flex items-center border-2 border-th-text-left rounded-full py-3 px-16 text-th-text-left focus:outline-none text-base tracking-wide hover:border-th-text-left hover:bg-th-text-left hover:text-th-background-left-to cursor-pointer">
                         LOGIN HERE
                     </div>
                 </div>
