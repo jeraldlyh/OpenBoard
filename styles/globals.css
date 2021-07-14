@@ -7,7 +7,7 @@
     --background-secondary: theme("colors.navy2");
     --text: theme("colors.gray.100");
     --accent: theme("colors.green.400");
-    --accent-secondary: theme("colors.bordertrans");
+    --accent-secondary: theme("colors.gray.500");
     --from: theme("colors.green.400");
     --to: theme("colors.blue.500");
     --outline: theme("colors.transparent");
@@ -24,7 +24,7 @@
     --background-secondary: theme("colors.white");
     --text: theme("colors.gray.800");
     --accent: theme("colors.purple.500");
-    --accent-secondary: theme("colors.bordertrans2");
+    --accent-secondary: theme("colors.gray.300");
     --from: theme("colors.purple.500");
     --to: theme("colors.red.300");
     --outline: theme("colors.transparent");
