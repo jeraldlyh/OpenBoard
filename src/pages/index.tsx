@@ -32,6 +32,9 @@ function Login() {
             .catch(error => console.log(error))     // Add error modals
     }
 
+    const clickable = "w-48 text-center mt-16 cursor-pointer py-3 font-bold rounded-full text-lg text-th-button border-none bg-gradient-to-br from-th-background-left-from to-th-background-left-to hover:opacity-80"
+    const disabled = "w-48 text-center mt-16 cursor-not-allowed py-3 font-bold rounded-full text-lg text-th-button border-none bg-gradient-to-br from-th-background-left-from to-th-background-left-to opacity-40"
+
     useEffect(() => {
         setMounted(true)
     }, [])
@@ -44,7 +47,7 @@ function Login() {
                 <title>OneBoard | Login</title>
             </Head>
             <div className="h-screen flex">
-                <div className="absolute text-th-text-left flex items-center pt-8 pl-10">
+                <div className="absolute text-th-text-right flex items-center pt-8 pl-10">
                     <BsClipboardData className="h-9 w-9"/>
                     <span className="cursor-default ml-2 pr-4 text-3xl font-light">One<span className="font-bold">Board</span></span>
                 </div>
@@ -90,7 +93,7 @@ function Login() {
                         </div>
                         <div className="flex justify-center">
                             <div
-                                className="w-48 text-center mt-16 cursor-pointer py-3 font-bold rounded-full text-lg text-th-button border-none bg-gradient-to-br from-th-background-left-from to-th-background-left-to hover:opacity-80"
+                                className={allValues.username && allValues.password ? clickable : disabled}
                                 onClick={() => login()}
                             >
                                 LOGIN
