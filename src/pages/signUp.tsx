@@ -43,8 +43,8 @@ function SignUp() {
         }
     }
 
-    const clickable = "w-48 text-center mt-14 cursor-pointer py-3 font-bold rounded-full text-lg text-th-button border-none bg-gradient-to-br from-th-background-left-from to-th-background-left-to hover:opacity-80"
-    const disabled = "w-48 text-center mt-14 cursor-not-allowed py-3 font-bold rounded-full text-lg text-th-button border-none bg-gradient-to-br from-th-background-left-from to-th-background-left-to opacity-40"
+    const clickable = "w-48 text-center mt-12 cursor-pointer py-3 font-bold rounded-full text-lg text-th-button border-none bg-gradient-to-br from-th-background-left-from to-th-background-left-to hover:opacity-80"
+    const disabled = "w-48 text-center mt-12 cursor-not-allowed py-3 font-bold rounded-full text-lg text-th-button border-none bg-gradient-to-br from-th-background-left-from to-th-background-left-to opacity-40"
 
     useEffect(() => {
         setMounted(true)
@@ -66,7 +66,7 @@ function SignUp() {
                     <label className="py-2 pl-4 pr-1 h-9 border border-th-text-left rounded-l-full border-r-0 text-th-text-left"><AiOutlineFormatPainter className="h-5 w-5"/></label>
                     <select
                         name="theme"
-                        className="border-l-0 -ml-1 h-9 text-sm cursor-pointer focus:outline-none bg-transparent border border-th-text-left hover:text-th-text-right rounded-r-full text-th-text-left pl-2 pr-5"
+                        className="border-l-0 -ml-1 h-9 text-sm cursor-pointer focus:outline-none bg-transparent border border-th-text-left rounded-r-full text-th-text-left hover:border-th-accent hover:bg-th-accent hover:text-th-background pl-2 pr-5"
                         onChange={e => setTheme(e.currentTarget.value)}
                         value={theme}
                         >
@@ -78,7 +78,7 @@ function SignUp() {
                     </select>
                 </div>
                 <div className="w-full lg:w-7/12 py-24 lg:py-16 bg-th-background-secondary flex flex-col justify-center items-center">
-                    <div className="lg:mt-5 w-5/12 items-center justify-center text-th-text-right">
+                    <div className="lg:mt-3 w-5/12 items-center justify-center text-th-text-right">
                         <div className="mt-6 mb-2 text-sm">NAME</div>
                         <div className="flex items-center border border-th-text-right rounded-full py-2 px-5">
                             <input className="w-full py-1 bg-th-background-secondary focus:outline-none text-sm tracking-wide" type="text" name="name" onChange={changeHandler}></input>
@@ -115,13 +115,13 @@ function SignUp() {
                     <div className="font-bold text-5xl">
                         Hello, Friend!
                     </div>
-                    <div className="w-80 mt-7 text-lg font-light text-center opacity-75 tracking-wide">
+                    <div className="w-80 mt-6 text-lg font-light text-center opacity-75 tracking-wide">
                         Enter your personal details to start your journey with us
                     </div>
-                    <div className="mt-10 lg:mt-28 font-semibold text-lg">
+                    <div className="mt-10 lg:mt-14 font-semibold text-lg">
                         Already have an account?
                     </div>
-                    <div onClick={() => router.push("/login")} className="font-semibold mt-4 flex items-center border-2 border-th-text-left rounded-full py-3 px-16 text-th-text-left focus:outline-none text-base tracking-wide hover:border-th-text-left hover:bg-th-text-left hover:text-th-background-left-to cursor-pointer">
+                    <div onClick={() => router.push("/login")} className="font-semibold mt-5 flex items-center border-2 border-th-text-left rounded-full py-3 px-16 text-th-text-left focus:outline-none text-base tracking-wide hover:border-th-text-left hover:bg-th-text-left hover:text-th-background-left-to cursor-pointer">
                         LOGIN HERE
                     </div>
                 </div>

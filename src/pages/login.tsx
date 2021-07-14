@@ -49,7 +49,7 @@ function Login() {
                     <label className="py-2 pl-4 pr-1 h-9 border border-th-text-left lg:border-th-accent-secondary rounded-l-full border-r-0 text-th-text-left lg:text-th-accent"><AiOutlineFormatPainter className="h-5 w-5"/></label>
                     <select
                         name="theme"
-                        className="border-l-0 -ml-1 h-9 text-sm cursor-pointer focus:outline-none bg-transparent border-th-text-left hover:text-th-text-right text-th-text-left lg:hover:border-th-accent lg:hover:bg-th-accent lg:hover:text-th-background lg:bg-th-background-secondary border lg:border-th-accent-secondary rounded-r-full lg:text-th-text pl-2 pr-5"
+                        className="border-l-0 -ml-1 h-9 text-sm cursor-pointer focus:outline-none bg-transparent border-th-text-left text-th-text-left hover:border-th-accent hover:bg-th-accent hover:text-th-background lg:bg-th-background-secondary border lg:border-th-accent-secondary rounded-r-full lg:text-th-text pl-2 pr-5"
                         onChange={e => setTheme(e.currentTarget.value)}
                         value={theme}
                         >
@@ -64,13 +64,13 @@ function Login() {
                     <div className="font-bold text-5xl">
                         Welcome Back!
                     </div>
-                    <div className="w-80 mt-7 text-lg font-light text-center opacity-75 tracking-wide">
+                    <div className="w-80 mt-6 text-lg font-light text-center opacity-75 tracking-wide">
                         Please login with your credentials to access your dashboard
                     </div>
-                    <div className="mt-10 lg:mt-28 font-semibold text-lg">
+                    <div className="mt-10 lg:mt-14 font-semibold text-lg">
                         No account yet?
                     </div>
-                    <div onClick={() => router.push("/signUp")} className="font-semibold mt-4 flex items-center border-2 border-th-text-left rounded-full py-3 px-16 text-th-text-left focus:outline-none text-base tracking-wide hover:border-th-text-left hover:bg-th-text-left hover:text-th-background-left-to cursor-pointer">
+                    <div onClick={() => router.push("/signUp")} className="font-semibold mt-5 flex items-center border-2 border-th-text-left rounded-full py-3 px-16 text-th-text-left focus:outline-none text-base tracking-wide hover:border-th-text-left hover:bg-th-text-left hover:text-th-background-left-to cursor-pointer">
                         SIGN UP HERE
                     </div>
                 </div>
