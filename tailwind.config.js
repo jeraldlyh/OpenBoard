@@ -21,8 +21,6 @@ module.exports = {
                 "th-button": "var(--button)",
                 navy1: "#090914",
                 navy2: "#091220",
-                bordertrans: "rgba(255, 255, 255, 0.25)",
-                bordertrans2: "rgba(0, 0, 0, 0.3)",
                 redtrans: "rgba(248, 113, 113, 0.2)",
                 greentrans: "rgba(16, 185, 129, 0.2)",
             },
