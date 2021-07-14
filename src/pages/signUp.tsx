@@ -1,7 +1,7 @@
 import Head from "next/head"
 import { Fragment, useState, useEffect } from "react"
 import { useRouter } from "next/router"
-import { registerUser } from "../actions/auth"
+import { registerMongo } from "../actions/auth"
 import { useAuthContext } from "../context/authContext"
 import { BsClipboardData } from "react-icons/bs"
 import { useTheme } from "next-themes"
@@ -36,7 +36,7 @@ function SignUp() {
                 firebaseId: response.user.uid,
                 preferences: [],
             }
-            await registerUser(body)
+            await registerMongo(body)
             router.push("/")
         } catch (error) {       // Add error modals
             console.log(error)
