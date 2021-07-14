@@ -58,18 +58,18 @@ function SignUp() {
                 <title>OneBoard | Sign Up</title>
             </Head>
             <div className="h-screen flex lg:flex-row flex-col">
-                <div className="absolute text-th-text-right flex items-center pt-8 pl-10">
-                    <BsClipboardData className="h-9 w-9" />
+                <div className="absolute text-th-text-left lg:text-th-text-right flex items-center pt-8 pl-10">
+                    <BsClipboardData className="h-9 w-9"/>
                     <span className="cursor-default ml-2 pr-4 text-3xl font-light">One<span className="font-bold">Board</span></span>
                 </div>
                 <div className="absolute right-0 m-8 flex items-center">
-                    <label className="py-2 pl-4 pr-1 h-9 border border-th-text-left rounded-l-full border-r-0 text-th-accent"><AiOutlineFormatPainter className="h-5 w-5" /></label>
+                    <label className="py-2 pl-4 pr-1 h-9 border border-th-text-left rounded-l-full border-r-0 text-th-text-left"><AiOutlineFormatPainter className="h-5 w-5"/></label>
                     <select
                         name="theme"
-                        className="border-l-0 -ml-1 h-9 text-sm cursor-pointer focus:outline-none hover:text-th-background bg-transparent border border-th-text-left rounded-r-full text-th-text pl-2 pr-5"
+                        className="border-l-0 -ml-1 h-9 text-sm cursor-pointer focus:outline-none bg-transparent border border-th-text-left hover:text-th-text-right rounded-r-full text-th-text-left pl-2 pr-5"
                         onChange={e => setTheme(e.currentTarget.value)}
                         value={theme}
-                    >
+                        >
                         {themes.map(th => (
                             <option key={th.name.toLowerCase()} value={th.name.toLowerCase()}>
                                 {th.name}

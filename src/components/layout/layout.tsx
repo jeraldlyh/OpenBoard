@@ -72,7 +72,7 @@ function Layout(props: any) {
                     <div className="cursor-default pl-8 pt-5 pb-2 text-th-accent text-sm">
                         MENU
                     </div>
-                    <div className={router.pathname === "/home" ? active : inactive} onClick={() => router.push("/home")}>
+                    <div className={router.pathname === "/" ? active : inactive} onClick={() => router.push("/")}>
                         <AiOutlineFundProjectionScreen className="h-5 w-5 mr-2" />
                         Site Management
                     </div>

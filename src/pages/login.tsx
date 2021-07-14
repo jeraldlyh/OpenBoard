@@ -52,10 +52,10 @@ function Login() {
                     <span className="cursor-default ml-2 pr-4 text-3xl font-light">One<span className="font-bold">Board</span></span>
                 </div>
                 <div className="absolute right-0 m-8 flex items-center">
-                    <label className="py-2 pl-4 pr-1 h-9 border border-th-text-left lg:border-th-accent-secondary rounded-l-full border-r-0 text-th-accent"><AiOutlineFormatPainter className="h-5 w-5"/></label>
+                    <label className="py-2 pl-4 pr-1 h-9 border border-th-text-left lg:border-th-accent-secondary rounded-l-full border-r-0 text-th-text-left lg:text-th-accent"><AiOutlineFormatPainter className="h-5 w-5"/></label>
                     <select
                         name="theme"
-                        className="border-l-0 -ml-1 h-9 text-sm cursor-pointer focus:outline-none lg:hover:border-th-accent lg:hover:bg-th-accent hover:text-th-background bg-transparent lg:bg-th-background-secondary border border-th-text-left lg:border-th-accent-secondary rounded-r-full text-th-text pl-2 pr-5"
+                        className="border-l-0 -ml-1 h-9 text-sm cursor-pointer focus:outline-none bg-transparent border-th-text-left hover:text-th-text-right text-th-text-left lg:hover:border-th-accent lg:hover:bg-th-accent lg:hover:text-th-background lg:bg-th-background-secondary border lg:border-th-accent-secondary rounded-r-full lg:text-th-text pl-2 pr-5"
                         onChange={e => setTheme(e.currentTarget.value)}
                         value={theme}
                         >
