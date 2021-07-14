@@ -38,8 +38,6 @@ function AuthProvider(props) {
                 setCurrentUser(user)
                 nookies.set(undefined, "token", token, {})
             }
-            
-            console.log("auith", user)
             setLoading(false)
         })
 

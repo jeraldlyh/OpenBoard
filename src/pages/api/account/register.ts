@@ -8,7 +8,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
     if (method === "POST") {
         try {
             const root = new Root({
-                username: body.username,
+                name: body.name,
                 firebaseId: body.firebaseId,
                 preferences: []
             })

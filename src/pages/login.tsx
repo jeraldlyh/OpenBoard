@@ -1,7 +1,6 @@
 import Head from "next/head"
 import { Fragment, useState, useEffect } from "react"
 import { useRouter } from "next/router"
-import { loginUser } from "../actions/auth"
 import { useAuthContext } from "../context/authContext"
 import { BsClipboardData } from "react-icons/bs"
 import { useTheme } from "next-themes"
@@ -12,9 +11,9 @@ function Login() {
     const { theme, setTheme } = useTheme()
     const [ mounted, setMounted ] = useState(false)
     const themes = [{ name: "Neon" }, { name: "Soft" }, { name: "Ruby" }, { name: "Dark" }, { name: "Basic" }];
-    const { setUsername, setID } = useAuthContext()
+    const { loginFirebase } = useAuthContext()
     const [allValues, setAllValues] = useState({
-        username: "",
+        email: "",
         password: "",
     })
 
@@ -23,13 +22,8 @@ function Login() {
     }
 
     const login = () => {
-        loginUser(allValues)
-            .then(response => {
-                setUsername(response.data.username)
-                setID(response.data._id)
-                router.push("/")
-            })
-            .catch(error => console.log(error))     // Add error modals
+        loginFirebase(allValues.email, allValues.password)
+            .then(() => router.push("/"))
     }
 
     const clickable = "w-48 text-center mt-16 cursor-pointer py-3 font-bold rounded-full text-lg text-th-button border-none bg-gradient-to-br from-th-background-left-from to-th-background-left-to hover:opacity-80"
@@ -83,9 +77,9 @@ function Login() {
                 <div className="w-full lg:w-7/12 py-24 lg:py-16 bg-th-background-secondary flex flex-col justify-center items-center">
                     <div className="text-th-text-right flex text-4xl font-bold">Login to <span className="ml-3 font-light">One</span>Board</div>
                     <div className="w-5/12 items-center justify-center text-th-text-right">
-                        <div className="mt-14 mb-2 text-sm">USERNAME</div>
+                        <div className="mt-14 mb-2 text-sm">EMAIL</div>
                         <div className="flex items-center border border-th-text-right rounded-full py-2 px-5">
-                            <input className="w-full py-1 bg-th-background-secondary focus:outline-none text-sm tracking-wide" type="text" name="username" onChange={changeHandler}></input>
+                            <input className="w-full py-1 bg-th-background-secondary focus:outline-none text-sm tracking-wide" type="email" name="email" onChange={changeHandler}></input>
                         </div>
                         <div className="mt-6 mb-2 text-sm">PASSWORD</div>
                         <div className="flex items-center border border-th-text-right rounded-full py-2 px-5">
@@ -93,7 +87,7 @@ function Login() {
                         </div>
                         <div className="flex justify-center">
                             <div
-                                className={allValues.username && allValues.password ? clickable : disabled}
+                                className={allValues.email && allValues.password ? clickable : disabled}
                                 onClick={() => login()}
                             >
                                 LOGIN

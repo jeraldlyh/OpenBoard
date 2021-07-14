@@ -13,6 +13,6 @@ export const verifyIdToken = (token) => {
         .auth()
         .verifyIdToken(token)
         .catch(error => {
-            console.log(error)
+            console.log("Error in verifyToken", error)
         })
 }

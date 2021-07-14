@@ -14,7 +14,7 @@ function SignUp() {
     const themes = [{ name: "Neon" }, { name: "Soft" }, { name: "Ruby" }, { name: "Dark" }, { name: "Basic" }];
     const { registerFirebase } = useAuthContext()
     const [allValues, setAllValues] = useState({
-        username: "",
+        name: "",
         email: "",
         password: "",
         repassword: ""
@@ -27,12 +27,12 @@ function SignUp() {
     const register = async () => {
         try {
             const response = await registerFirebase(allValues.email, allValues.password)
-            response.updateProfile({
-                displayName: allValues.username
+            response.user.updateProfile({
+                displayName: allValues.name
             })
 
             const body = {                          // MongoDB model
-                username: allValues.username,
+                name: allValues.name,
                 firebaseId: response.user.uid,
                 preferences: [],
             }
@@ -79,9 +79,9 @@ function SignUp() {
                 </div>
                 <div className="w-full lg:w-7/12 py-24 lg:py-16 bg-th-background-secondary flex flex-col justify-center items-center">
                     <div className="lg:mt-5 w-5/12 items-center justify-center text-th-text-right">
-                        <div className="mt-6 mb-2 text-sm">USERNAME</div>
+                        <div className="mt-6 mb-2 text-sm">NAME</div>
                         <div className="flex items-center border border-th-text-right rounded-full py-2 px-5">
-                            <input className="w-full py-1 bg-th-background-secondary focus:outline-none text-sm tracking-wide" type="text" name="username" onChange={changeHandler}></input>
+                            <input className="w-full py-1 bg-th-background-secondary focus:outline-none text-sm tracking-wide" type="text" name="name" onChange={changeHandler}></input>
                         </div>
                         <div className="mt-6 mb-2 text-sm">EMAIL</div>
                         <div className="flex items-center border border-th-text-right rounded-full py-2 px-5">
@@ -103,7 +103,7 @@ function SignUp() {
                         }
                         <div className="flex justify-center">
                             <div
-                                className={allValues.username && allValues.email && allValues.password && allValues.repassword && allValues.password === allValues.repassword ? clickable : disabled}
+                                className={allValues.name && allValues.email && allValues.password && allValues.repassword && allValues.password === allValues.repassword ? clickable : disabled}
                                 onClick={() => register()}
                             >
                                 SIGN UP

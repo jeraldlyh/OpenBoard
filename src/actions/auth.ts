@@ -1,7 +1,6 @@
 import axiosInstance from "../axios/axiosInstance"
 
 export const registerUser = async (body: object) => {
-    console.log(body)
     const response = await axiosInstance.post("/api/account/register/", body)
     return response
 }
