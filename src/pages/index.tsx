@@ -10,6 +10,7 @@ import { Fragment } from "react"
 import { GetServerSideProps } from "next"
 import nookies from "nookies"
 import { verifyIdToken } from "../../firebase/firebaseAdmin"
+import useSWR from "swr"
 
 function Home() {
     return (

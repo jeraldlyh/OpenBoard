@@ -1,15 +1,16 @@
+import { stubString } from "lodash"
 import mongoose from "mongoose"
 
 const Schema = mongoose.Schema
 
 const forumPostSchema = new Schema({
-    root_id: mongoose.Schema.Types.ObjectId,
-    user_id: mongoose.Schema.Types.ObjectId,
+    root_id: String,
+    user_id: String,
     postDateTime: Date,
     description: String,
     likes: String,
     comments: [{
-        user_id: mongoose.Schema.Types.ObjectId,
+        user_id: String,
         comment: String,
         commentDateTime: Date
     }]

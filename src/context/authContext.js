@@ -44,7 +44,6 @@ function AuthProvider(props) {
         return unsubscribe
     }, [])
 
-
     return (
         <AuthContext.Provider value={{
             currentUser,

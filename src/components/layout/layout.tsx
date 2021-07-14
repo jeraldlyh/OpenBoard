@@ -9,7 +9,7 @@ import { useAuthContext } from "../../context/authContext"
 
 function Layout(props: any) {
     const router = useRouter()
-    const { logoutFirebase } = useAuthContext()
+    const { logoutFirebase, currentUser } = useAuthContext()
     const { theme, setTheme } = useTheme()
     const [mounted, setMounted] = useState(false)
     const [searchValue, setSearchValue] = useState("")
@@ -19,6 +19,10 @@ function Layout(props: any) {
 
     useEffect(() => {
         setMounted(true)
+
+        if (currentUser) {                  // To remove later
+            console.log(currentUser.uid)
+        }
     }, [])
 
     const logoutUser = () => {

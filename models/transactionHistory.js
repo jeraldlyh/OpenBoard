@@ -3,7 +3,7 @@ import mongoose from "mongoose"
 const Schema = mongoose.Schema
 
 const transactionHistorySchema = new Schema({
-    user: mongoose.Schema.Types.ObjectId,
+    user: String,
     purchaseDateTime: Date,
     quantity: Number,
     product: String,
