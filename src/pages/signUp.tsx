@@ -96,7 +96,7 @@ function SignUp() {
                             <input className="w-full py-1 bg-th-background-secondary focus:outline-none text-sm tracking-wide" type="password" name="repassword" onChange={changeHandler}></input>
                         </div>
                         {
-                            allValues.password !== allValues.repassword && allValues.repassword !== "" ?
+                            allValues.password !== allValues.repassword && allValues.password !== "" && allValues.repassword !== "" ?
                                 <div className="text-red-400 font-light text-sm">Your passwords do not match. Please try again.</div>
                                 :
                                 null
