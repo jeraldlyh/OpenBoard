@@ -3,12 +3,19 @@ import Root from "../../../../models/root"
 import type { NextApiRequest, NextApiResponse } from "next"
 
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
-    if (req.method === "POST") {
+    const { method, body } = req
+
+    if (method === "POST") {
         try {
-            const root = new Root(req.body)
+            const root = new Root({
+                username: body.username,
+                firebaseId: body.firebaseId,
+                preferences: []
+            })
             const response = await root.save()
-            return res.status(201).send(response)
+            return res.status(201).end()
         } catch (error) {
+            console.log(error)
             return res.status(500).send(error.messages)
         }
     }

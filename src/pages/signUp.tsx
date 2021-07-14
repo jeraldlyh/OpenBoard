@@ -2,7 +2,7 @@ import Head from "next/head"
 import { Fragment, useState, useEffect } from "react"
 import { useRouter } from "next/router"
 import { registerUser } from "../actions/auth"
-import { useAuthContext } from "../provider/authProvider"
+import { useAuthContext } from "../context/authContext"
 import { BsClipboardData } from "react-icons/bs"
 import { useTheme } from "next-themes"
 import { AiOutlineFormatPainter } from "react-icons/ai"
@@ -10,9 +10,9 @@ import { AiOutlineFormatPainter } from "react-icons/ai"
 function SignUp() {
     const router = useRouter()
     const { theme, setTheme } = useTheme()
-    const [ mounted, setMounted ] = useState(false)
+    const [mounted, setMounted] = useState(false)
     const themes = [{ name: "Neon" }, { name: "Soft" }, { name: "Ruby" }, { name: "Dark" }, { name: "Basic" }];
-    const { setUsername, setID } = useAuthContext()
+    const { registerFirebase } = useAuthContext()
     const [allValues, setAllValues] = useState({
         username: "",
         email: "",
@@ -24,13 +24,23 @@ function SignUp() {
         setAllValues({ ...allValues, [e.target.name]: e.target.value })
     }
 
-    const register = () => {
-        registerUser(allValues)
-            .then(response => {
-                setUsername(response.data.username)
-                setID(response.data._id)
+    const register = async () => {
+        try {
+            const response = await registerFirebase(allValues.email, allValues.password)
+            response.updateProfile({
+                displayName: allValues.username
             })
-            .catch(error => console.log(error))     // Add error modals
+
+            const body = {                          // MongoDB model
+                username: allValues.username,
+                firebaseId: response.user.uid,
+                preferences: [],
+            }
+            await registerUser(body)
+            router.push("/")
+        } catch (error) {       // Add error modals
+            console.log(error)
+        }
     }
 
     const clickable = "w-48 text-center mt-14 cursor-pointer py-3 font-bold rounded-full text-lg text-th-button border-none bg-gradient-to-br from-th-background-left-from to-th-background-left-to hover:opacity-80"
@@ -39,7 +49,7 @@ function SignUp() {
     useEffect(() => {
         setMounted(true)
     }, [])
-    
+
     if (!mounted) return null
 
     return (
@@ -49,17 +59,17 @@ function SignUp() {
             </Head>
             <div className="h-screen flex lg:flex-row flex-col">
                 <div className="absolute text-th-text-right flex items-center pt-8 pl-10">
-                    <BsClipboardData className="h-9 w-9"/>
+                    <BsClipboardData className="h-9 w-9" />
                     <span className="cursor-default ml-2 pr-4 text-3xl font-light">One<span className="font-bold">Board</span></span>
                 </div>
                 <div className="absolute right-0 m-8 flex items-center">
-                    <label className="py-2 pl-4 pr-1 h-9 border border-th-text-left rounded-l-full border-r-0 text-th-accent"><AiOutlineFormatPainter className="h-5 w-5"/></label>
+                    <label className="py-2 pl-4 pr-1 h-9 border border-th-text-left rounded-l-full border-r-0 text-th-accent"><AiOutlineFormatPainter className="h-5 w-5" /></label>
                     <select
                         name="theme"
                         className="border-l-0 -ml-1 h-9 text-sm cursor-pointer focus:outline-none hover:text-th-background bg-transparent border border-th-text-left rounded-r-full text-th-text pl-2 pr-5"
                         onChange={e => setTheme(e.currentTarget.value)}
                         value={theme}
-                        >
+                    >
                         {themes.map(th => (
                             <option key={th.name.toLowerCase()} value={th.name.toLowerCase()}>
                                 {th.name}
@@ -87,9 +97,9 @@ function SignUp() {
                         </div>
                         {
                             allValues.password !== allValues.repassword && allValues.repassword !== "" ?
-                            <div className="text-red-400 font-light text-sm">Your passwords do not match. Please try again.</div>
-                            :
-                            null
+                                <div className="text-red-400 font-light text-sm">Your passwords do not match. Please try again.</div>
+                                :
+                                null
                         }
                         <div className="flex justify-center">
                             <div
