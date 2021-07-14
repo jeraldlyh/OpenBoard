@@ -37,11 +37,11 @@ function Login() {
                     <BsClipboardData className="h-9 w-9"/>
                     <span className="cursor-default ml-2 pr-4 text-3xl font-light">One<span className="font-bold">Board</span></span>
                 </div>
-                <div className="w-1/3 bg-gradient-to-br from-blue-600 to-green-500 justify-center flex flex-col items-center">
+                <div className="w-5/12 bg-gradient-to-br from-blue-600 to-green-500 justify-center flex flex-col items-center">
                     <div className="font-bold text-white text-5xl">
                         Welcome Back!
                     </div>
-                    <div className="w-7/12 mt-7 text-white text-lg font-light text-center opacity-75 tracking-wide">
+                    <div className="w-1/2 mt-7 text-white text-lg font-light text-center opacity-75 tracking-wide">
                         Please login with your credentials to access your dashboard
                     </div>
                     <div className="mt-28 text-white font-semibold text-lg">
@@ -51,9 +51,9 @@ function Login() {
                         SIGN UP HERE
                     </div>
                 </div>
-                <div className="w-2/3 py-16 bg-navy1 flex flex-col justify-center items-center">
+                <div className="w-7/12 py-16 bg-navy1 flex flex-col justify-center items-center">
                     <div className="text-white flex text-4xl font-bold">Login to <span className="ml-3 font-light">One</span>Board</div>
-                    <div className="w-1/3 items-center justify-center text-gray-300">
+                    <div className="w-5/12 items-center justify-center text-gray-300">
                         <div className="mt-14 mb-2 text-sm text-gray-300">USERNAME</div>
                         <div className="flex items-center border border-gray-300 rounded-full py-2 px-5">
                             <input className="py-1 bg-navy1 text-gray-300 focus:outline-none text-sm tracking-wide" type="text" name="username" onChange={changeHandler}></input>
