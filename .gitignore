@@ -29,5 +29,8 @@ yarn-error.log*
 .env.test.local
 .env.production.local
 
+# Config files
+openboard-config.json
+
 # Vercel
 .vercel
